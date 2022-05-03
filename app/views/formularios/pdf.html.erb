@@ -1,0 +1,74 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-mx" lang="es-mx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>LISTA DE COMIDA</title>
+    <meta name="author" content="EDUARDO INIESTRA" />
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            text-indent: 0;
+        }
+
+        .s1 {
+            color: #FFF;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .s2 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        table,
+        tbody {
+            vertical-align: top;
+            overflow: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <table style="border-collapse:collapse;margin-left:5.33pt" cellspacing="0">
+        <tr style="height:15pt">
+            <td style="width:441pt" colspan="2" bgcolor="#000000">
+                <p class="s1" style="padding: 3pt;text-indent: 0pt;line-height: 13pt;text-align: center;">
+                  LISTA DE COMIDA</p>
+            </td>
+        </tr>
+        <%@formularios.each do |p| %>
+        <tr style="height:14pt">
+
+            <td style="width:241pt;border-left-style:solid;border-left-width:1pt;border-left-color:#666666;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#666666;border-right-style:solid;border-right-width:1pt;border-right-color:#666666"
+                >
+                <p style="text-indent: 0pt;text-align: left;"> <%= p.nombre %></p>
+            </td>
+            <td style="width:200pt;border-left-style:solid;border-left-width:1pt;border-left-color:#666666;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#666666;border-right-style:solid;border-right-width:1pt;border-right-color:#666666"
+                >
+                <p style="text-indent: 0pt;text-align: left;"> <%=p.platillo %></p>
+            </td>
+
+        </tr>
+        <% end %>
+        <tr style="height:14pt">
+            <td style="width:441pt;border-top-style:solid;border-top-width:1pt;border-top-color:#666666;border-left-style:solid;border-left-width:1pt;border-left-color:#666666;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#666666;border-right-style:solid;border-right-width:1pt;border-right-color:#666666"
+                colspan="2" bgcolor="#CCCCCC">
+                <p class="s2" style="padding-left: 5pt;text-indent: 0pt;line-height: 13pt;text-align: left;">Texto de
+                    prueba</p>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

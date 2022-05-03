@@ -1,0 +1,25 @@
+<%= render 'header/linkheader' %>
+<div class="container">
+
+
+<div class="col-8 mx-auto">
+<a href=" <%= empleados_path() %>" class="btn btn-secondary" ><i class="bi bi-arrow-left-square"></i></a>
+<h1 class="text-light d-flex justify-content-center">Registro de Empleado</h1>
+<%= form_with model: @empleado do |form|%>
+
+<br><% @empleado.errors.full_messages.each do |error| %><br>
+<%= error %>
+<%end %>
+
+<%=form.label  :nombre, class: "form-label text-light" %>
+<%=form.text_field :nombre, class: "form-control" %>
+<%=form.label :area, class: "form-label text-light" %>
+<%=form.text_field :area, class: "form-control" %>
+<%=form.label :imagen, class: "form-label text-light" %>
+<%=form.file_field :imagen, class: "form-control" %>
+
+<%= form.submit :"Registrar de Empleado", class: "btn btn-success mt-4" %>
+<%end%>
+</div>
+
+</div>

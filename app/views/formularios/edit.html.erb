@@ -1,0 +1,26 @@
+<%= render 'header/linkheader' %>
+<div class="container">
+
+
+<div class="col-8 mx-auto">
+<a href=" <%= lista_path() %>" class="btn btn-secondary" ><i class="bi bi-arrow-left-square"></i></a>
+<h1 class="text-light d-flex justify-content-center">Registro</h1>
+
+ <%= form_with model: @formulario do |form|%>
+<br><% @formulario.errors.full_messages.each do |error| %><br>
+
+<%= error %>
+<%end %>
+        <%=form.label  :platillo, class: "form-label text-light"%>
+        <%= form.select :platillo, [['Normal', 'Normal'], ['Enchiladas', 'Enchiladas'],['Pechuga', 'Pechuga']], {}, {class: "form-select"} %>
+        <%=form.label :nombre, class: "form-label text-light"%>
+       <%= form.select :nombre ,options_for_select(@empleados.collect{ |u| [u.nombre, u.nombre] }, @nombre), {}, {class: "form-control", id:"e3"} %>
+        <%=form.label :fecha, class: "form-label text-light"%>
+        <%=form.date_field  :fecha, class: "form-control ", :readonly => true, value: Date.today %>
+
+        <%= form.submit :"Registrar", class: "btn btn-success mt-4" %>
+<%end%>
+
+</div>
+
+</div>

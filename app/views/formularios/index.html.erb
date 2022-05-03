@@ -1,0 +1,139 @@
+
+<div class="container " >
+
+      <h1 class="text-light display-1 d-flex justify-content-center text">COMIDA BIOIN</h1>
+
+      <hr class="bg-light" size="5">
+
+      <div class="row">
+        <% @platillos.each do |f| %>
+
+            <div class="col-md-6  mx-auto ">
+                <div class="card m-3 shadow-lg bg-transparent text-light text" >
+                    <div class="card-header bg-black opacity-75">
+                        <h3 >
+                            Menu del Dia
+                        </h3>
+                    </div>
+                    <div class="card-body bg-black opacity-50">
+                        <blockquote class="blockquote mb-0">
+                            <p style="white-space: pre-line"><%= f.comida %></p>
+                            <footer class="blockquote"><p><%= f.fecha %></p></footer>
+                        </blockquote>
+                    </div>
+                </div>
+
+            </div>
+            <div class=" col-md-6 mx-auto">
+                <h1 class="text-light text d-flex justify-content-center">Repartidores</h1>
+                <div class="card m-3 shadow-lg bg-black text-light opacity-75" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-12">
+                            <div class="card-body">
+
+
+
+                                <h5 class="card-title"><%=image_tag @foto1, style: 'width:80px;', class:"me-1" %><%= f.repartidor_1 %>-<%= @area1 %></h5>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card m-3 shadow-lg bg-black text-light opacity-75" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-12">
+                            <div class="card-body">
+                                <h5 class="card-title"><%=image_tag @foto2, style: 'width:80px;', class:"me-1" %><%= f.repartidor_2 %>-<%= @area2 %></h5>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        <% end %>
+
+        <%if Time.now < Time.parse("10:30") %>
+
+        <div class="col-md-4">
+        <h3 class="text-light text d-flex justify-content-center">Normal</h3>
+        <a type="button" id="lol" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-comida="Normal" class="mx-auto d-flex justify-content-center m-2 img-fluid ">
+        <img src="/images/normal.jpg" class="cicle" alt=""></a>
+        </div>
+        <div class="col-md-4">
+        <h3 class="text-light text d-flex justify-content-center">Enchiladas</h3>
+        <a type="button" id="lol1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-comida="Enchiladas" class="mx-auto d-flex justify-content-center m-2 img-fluid">
+        <img src="/images/enchiladas.jpg" class="cicle" alt=""></a>
+        </div>
+        <div class="col-md-4">
+        <h3 class="text-light text d-flex justify-content-center">Milanesa</h3>
+        <a type="button" id="lol2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-comida="Milanesa" class="mx-auto d-flex justify-content-center m-2 img-fluid">
+        <img src="/images/milanesa.jpg" class="cicle" alt=""></a>
+        </div>
+
+        <% end %>
+
+
+
+
+
+
+
+      </div>
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Registrar Platillo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= form_with model: @formulario do |form|%>
+        <%=form.label  :platillo, class: "form-label" %>
+        <%=form.text_field :platillo, class: "form-control", id: "platillo", :readonly => true %>
+       <!--  <%= form.select :platillo, [['Normal', 'Normal'], ['Enchiladas', 'Enchiladas'],['Pechuga', 'Pechuga']], {}, {class: "form-select"} %> -->
+        <%=form.label :nombre, class: "form-label" %>
+       <%= form.select :nombre, options_for_select(@empleados.collect{ |u| [u.nombre, u.nombre] }), {}, {class: "form-control", id:"e1"} %>
+        <%=form.label :fecha, class: "form-label" %>
+        <%=form.date_field  :fecha, class: "form-control ", :readonly => true, value: Date.today %>
+
+        <%= form.submit :"Registrar", class: "btn btn-success mt-4" %>
+        <%end%>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<% if notice == "nuevo" %>
+  <script>
+  Swal.fire({
+
+  icon: 'success',
+  title: 'Pedido Realizado',
+  showConfirmButton: false,
+  timer: 1500
+  })
+  </script>
+<%end %>
+
+<% if alert == "error" %>
+  <script>
+  Swal.fire({
+
+  icon: 'error',
+  title: 'Empleado Ya Registrado',
+  showConfirmButton: false,
+  timer: 1500
+  })
+  </script>
+<%end %>

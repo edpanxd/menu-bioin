@@ -1,0 +1,49 @@
+<%= render 'header/linkheader' %>
+<div class="container">
+
+<h1 class="text-light text d-flex justify-content-center">Registro de menu del dia</h1>
+
+<a href=" <%= new_platillo_path() %>" class="btn btn-secondary m-1 text" >Nuevo Registro</a>
+
+    <div class="row">
+      <% @platillos.each do |p| %>
+      <div class="col-md-4 card-columns" > >
+      <div class="card opacity-75 bg-color text text-light  " style="height: 24rem; border-radius: 10%">
+                <h1 class="text d-flex justify-content-center"><i class="bi bi-egg-fried"></i></h1>
+                <div class="card-body">
+                    <P class="card-title">Comida: <%= p.comida %></P>
+                    <p class="card-text">Repartidores:</p>
+                    <p class="card-text"><%= p.repartidor_1 %></p>
+                     <p class="card-text"><%= p.repartidor_2 %></p>
+                </div>
+                <div class="card-footer">
+                    <span><%= p.fecha %></span> <br>
+                    <a href="<%= edit_platillo_path(p) %>" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
+                    <%=link_to "", platillo_path(p), method: "delete", class: "btn btn-danger bi bi-trash3-fill " %>
+                </div>
+            </div>
+      </div>
+
+    <%end%>
+
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group  me-2" role="group" aria-label="First group">
+          <%= will_paginate @platillos, class:"m-2 btn btn-dark", type: "button" %>
+        </div>
+      </div>
+
+    </div>
+
+
+</div>
+<% if notice == "nuevo" %>
+  <script>
+  Swal.fire({
+
+  icon: 'success',
+  title: 'Registro Exitoso',
+  showConfirmButton: false,
+  timer: 1500
+  })
+  </script>
+<%end %>

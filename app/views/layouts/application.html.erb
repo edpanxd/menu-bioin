@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Menu Bioin</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+ <!--
+ -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.9/dist/sweetalert2.all.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
+    <!--Datatable-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+    <!--Datatable-->
+    <!--Select2-->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!--Select2-->
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--Fond family-->
+    <link href='https://fonts.googleapis.com/css?family=GFS Didot' rel='stylesheet'>
+    <!--Fond family-->
+    <!--simplepagination-->
+
+    <!--simplepagination-->
+  </head>
+
+  <body class="imagen">
+    <%= yield %>
+  </body>
+  <script>
+    $(document).ready(function() {
+        $('#tablas').DataTable({
+            "lengthMenu": [
+                [5, 10, 50, -1],
+                [5, 10, 50, "All"]
+            ],
+
+	          "bDestroy": true,
+
+        });
+    });
+  </script>
+   <script>
+    $('#e1').select2({
+      placeholder: "Selecciona tu nombre",
+      allowClear: true,
+      width: '100%',
+      dropdownParent: $('#staticBackdrop')
+    }).val(null).trigger("change");
+    $('#e2').select2({
+      placeholder: "Selecciona tu nombre",
+      allowClear: true,
+      width: '100%',
+
+    }).val(null).trigger("change");
+    $('#e6').select2({
+      placeholder: "Selecciona tu nombre",
+      allowClear: true,
+      width: '100%',
+
+    }).val(null).trigger("change");
+    $('#e3').select2({
+      placeholder: "Selecciona tu nombre",
+
+      width: '100%',
+
+    })
+    $('#e4').select2({
+      placeholder: "Selecciona tu nombre",
+
+      width: '100%',
+
+    })
+    $('#e5').select2({
+      placeholder: "Selecciona tu nombre",
+
+      width: '100%',
+
+    })
+  </script>
+  <script>
+     $(document).ready(function () {
+
+     $("#lol").click(function () {
+    var platillo =$(this).data('comida')
+
+    $("#platillo").val(platillo)
+
+    })
+
+   $("#lol1").click(function () {
+    var platillo =$(this).data('comida')
+
+    $("#platillo").val(platillo)
+
+    })
+
+   $("#lol2").click(function () {
+    var platillo =$(this).data('comida')
+
+    $("#platillo").val(platillo)
+
+    })
+
+    })
+  </script>
+
+</html>

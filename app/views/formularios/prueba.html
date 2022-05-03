@@ -1,0 +1,60 @@
+<h1>
+    <%=notice%>
+</h1>
+
+<h1 class="text-light display-1 d-flex justify-content-center">MENU DEL DIA</h1>
+<hr class="bg-light" size="5">
+<div class="col-12 mx-auto" style="background-color:rgb(45, 95, 95, 0.9); ">
+
+    <% @platillos.each do |f| %>
+        <h1 class="text-light font-monospace d-flex justify-content-center " style="white-space: pre">
+            <%= f.comida %>
+        </h1>
+        <h2 class="text-light font-monospace d-flex justify-content-center">
+            <%= f.repartidor_1 %>
+        </h2>
+        <h2 class="text-light font-monospace d-flex justify-content-center">
+            <%= f.repartidor_2 %>
+        </h2>
+        <h2 class="text-light font-monospace d-flex justify-content-center">
+            <%= f.fecha %>
+        </h2>
+        <% end %>
+
+            <div class="text-center">
+                <button type="button" class="btn btn-primary m-2  " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Registrar platillo
+        </button>
+            </div>
+</div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Registrar Platillo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <%= form_with model: @formulario do |form|%>
+                    <%=form.label :platillo, class: "form-label" %>
+                        <%= form.select :platillo, [['Normal', 'Normal' ], ['Enchiladas', 'Enchiladas' ],['Pechuga', 'Pechuga' ]],
+              {}, {class: "form-select" } %>
+                            <%=form.label :nombre, class: "form-label" %>
+                                <%= form.select :nombre, options_for_select(@empleados.collect{ |u| [u.nombre, u.nombre] }), {},
+                  {class: "form-control" , id:"e1"} %>
+                                    <%=form.label :fecha, class: "form-label" %>
+                                        <%=form.date_field :fecha, class: "form-control " , :readonly=> true, value: Date.today %>
+
+                                            <%= form.submit :"Registrar", class: "btn btn-success mt-4" %>
+                                                <%end%>
+
+
+            </div>
+
+        </div>
+    </div>

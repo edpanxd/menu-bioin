@@ -1,0 +1,46 @@
+<%= render 'header/linkheader' %>
+<div class="container text ">
+
+<h1 class="text-light d-flex justify-content-center">Lista de empleados</h1>
+<a href=" <%= new_empleado_path() %>" class="btn btn-primary m-3" >Nuevo Empleado</a>
+
+<div class="col-auto table-responsive p-2 text-white opacity-75" style="background-color: black">
+<table class="table table-dark table-hover table-bordered " id="tablas">
+  <thead>
+    <tr class="text-center">
+
+      <th scope="col">Nombre</th>
+      <th scope="col">Area</th>
+      <th scope="col">Foto</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @empleados.each do |p| %>
+    <tr>
+      <td><%= p.nombre %></td>
+      <td><%= p.area %></td>
+      <td><%=image_tag p.imagen, style: 'width:100px;' %></td>
+      <td class="text-center"><a href="<%= edit_empleado_path(p) %>" class="btn btn-primary" data-confirm ="Desea editar este registro?"><i class="bi bi-pencil-square"></i></a></td>
+      <td class="text-center"><%=link_to "", empleado_path(p), method: "delete", data: {confirm: 'Desea eliminar este registro?'},class: "btn btn-danger bi bi-trash3-fill" %></td>
+    </tr>
+  <%end%>
+  </tbody>
+</table>
+
+
+</div>
+
+</div>
+<% if notice == "nuevo" %>
+  <script>
+  Swal.fire({
+
+  icon: 'success',
+  title: 'Registro Exitoso',
+  showConfirmButton: false,
+  timer: 1500
+  })
+  </script>
+<%end %>

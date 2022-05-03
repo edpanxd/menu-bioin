@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comida: MyString
+  repartidor_1: MyString
+  repartidor_2: MyString
+  fecha: 2022-04-21
+
+two:
+  comida: MyString
+  repartidor_1: MyString
+  repartidor_2: MyString
+  fecha: 2022-04-21

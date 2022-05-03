@@ -1,0 +1,30 @@
+<%= render 'header/linkheader' %>
+<div class="container">
+
+
+<div class="col-8 mx-auto">
+<a href=" <%= platillos_path() %>" class="btn btn-secondary" ><i class="bi bi-arrow-left-square"></i></a>
+<h1 class="text-light d-flex justify-content-center">Registro</h1>
+<%= form_with model: @platillo do |form|%>
+
+<br><% @platillo.errors.full_messages.each do |error| %><br>
+
+<%= error %>
+<%end %>
+
+<%=form.label  :comida, class: "form-label text-light" %>
+<%=form.text_area :comida, class: "form-control" %>
+<%=form.label :repartidor_1, class: "form-label text-light" %>
+<%= form.select :repartidor_1, options_for_select(@empleados.collect{ |u| [u.nombre , u.nombre]  } ), {}, {class: "form-control", id:"e2"} %>
+<%=form.label :repartidor_2, class: "form-label text-light" %>
+<%= form.select :repartidor_2, options_for_select(@empleados.collect{ |u| [u.nombre , u.nombre]  }), {}, {class: "form-control", id:"e6"} %>
+<%=form.label :fecha, class: "form-label text-light" %>
+<%=form.date_field  :fecha, class: "form-control "%>
+<!--
+<%=form.date_field  :Fecha, class: "form-control ", :readonly => true, value: Date.today %>
+-->
+<%= form.submit :"Registrar Platillo", class: "btn btn-success mt-4" %>
+<%end%>
+</div>
+
+</div>
