@@ -25,16 +25,16 @@ production:
   #adapter: mysql2
   #encoding: utf8mb4
   #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  #username: menu
-  #password: hola
+  #username: bioindev
+  #password: BioinDev123asd
   #database: menubioin
   #socket: /var/run/mysqld/mysqld.sock
 
 #development:
-  #<<: default
+  #<<: *default
 
 #test:
-  #<<:default
+  #<<: *default
 
 #production:
- # <<: *default
+  #<<: *default
