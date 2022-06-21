@@ -11,9 +11,9 @@
             <div class="col-md-6  mx-auto ">
                 <div class="card m-3 shadow-lg bg-transparent text-light text" >
                     <div class="card-header bg-black opacity-75">
-                        <h3 >
+                        <h2>
                             Menu del Dia
-                        </h3>
+                        </h2>
                     </div>
                     <div class="card-body bg-black opacity-50">
                         <blockquote class="blockquote mb-0">
@@ -33,7 +33,7 @@
 
 
 
-                                <h5 class="card-title"><%=image_tag @foto1, style: 'width:80px;', class:"me-1" %><%= f.repartidor_1 %>-<%= @area1 %></h5>
+                                <h5 class="card-title"><%=image_tag @foto1, style: 'width:80px;', class:"me-1" %><%= f.repartidor_1 %> - <%= @area1 %></h5>
 
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                     <div class="row g-0">
                         <div class="col-md-12">
                             <div class="card-body">
-                                <h5 class="card-title"><%=image_tag @foto2, style: 'width:80px;', class:"me-1" %><%= f.repartidor_2 %>-<%= @area2 %></h5>
+                                <h5 class="card-title"><%=image_tag @foto2, style: 'width:80px;', class:"me-1" %><%= f.repartidor_2 %> - <%= @area2 %></h5>
 
                             </div>
                         </div>
@@ -54,7 +54,7 @@
 
         <% end %>
 
-        <%if Time.now < Time.parse("10:30") %>
+        <%if Time.now < Time.parse("19:30") %>
 
         <div class="col-md-4">
         <h3 class="text-light text d-flex justify-content-center">Normal</h3>
@@ -71,7 +71,18 @@
         <a type="button" id="lol2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-comida="Milanesa" class="mx-auto d-flex justify-content-center m-2 img-fluid">
         <img src="/images/milanesa.jpg" class="cicle" alt=""></a>
         </div>
-
+        <div class="col-md-4">
+        <h3 class="text-light text d-flex justify-content-center">Enchiladas Sin Crema</h3>
+        <a type="button" id="lol3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-comida="Enchiladas Sin Crema" class="mx-auto d-flex justify-content-center m-2 img-fluid">
+        <img src="/images/enchiladas.jpg" class="cicle" alt=""></a>
+        </div>
+        <div class="col-md-4">
+        <h3 class="text-light text d-flex justify-content-center">Enchiladas Sin Lechuga</h3>
+        <a type="button" id="lol4" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-comida="Enchiladas Sin Lechuga" class="mx-auto d-flex justify-content-center m-2 img-fluid">
+        <img src="/images/enchiladas.jpg" class="cicle" alt=""></a>
+        </div>
+        <% else %>
+          <h1>Vuelva mañana</h1>
         <% end %>
 
 

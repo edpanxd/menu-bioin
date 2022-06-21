@@ -39,8 +39,8 @@
     $(document).ready(function() {
         $('#tablas').DataTable({
             "lengthMenu": [
-                [5, 10, 50, -1],
-                [5, 10, 50, "All"]
+                [10, 50, 75, -1],
+                [10, 50, 75, "All"]
             ],
 
 	          "bDestroy": true,
@@ -48,7 +48,7 @@
         });
     });
   </script>
-   <script>
+  <script>
     $('#e1').select2({
       placeholder: "Selecciona tu nombre",
       allowClear: true,
@@ -104,6 +104,20 @@
     })
 
    $("#lol2").click(function () {
+    var platillo =$(this).data('comida')
+
+    $("#platillo").val(platillo)
+
+    })
+
+    $("#lol3").click(function () {
+    var platillo =$(this).data('comida')
+
+    $("#platillo").val(platillo)
+
+    })
+
+    $("#lol4").click(function () {
     var platillo =$(this).data('comida')
 
     $("#platillo").val(platillo)
