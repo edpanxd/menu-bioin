@@ -22,6 +22,11 @@ class FormulariosController < ApplicationController
     end
   end
 
+  def new
+   @formulario = Formulario.new
+   @empleados = Empleado.all
+  end
+
   def create
     @formulario = Formulario.new(formulario_params)
     if @formulario.save
@@ -56,6 +61,8 @@ class FormulariosController < ApplicationController
   def lista
     @formularios = Formulario.where(fecha: Date.today).order(nombre: 'ASC')
     @enchiladas = Formulario.where(fecha: Date.today, platillo: 'Enchiladas').count
+    @crema = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Crema').count
+    @lechuga = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Lechuga').count
     @milanesa = Formulario.where(fecha: Date.today, platillo: 'Milanesa').count
     @normal = Formulario.where(fecha: Date.today, platillo: 'Normal').count
     respond_to do |format|

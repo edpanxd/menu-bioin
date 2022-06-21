@@ -14,23 +14,17 @@
                     <div class="card text-white bg-dark m-3" style="max-width: 18rem; border-radius: 10%">
                         <div class="card-header">Cantidad</div>
                         <div class="card-body">
-                        <table class="table table-dark">
-                        <tr>
-                          <th>Normal</th>
-                          <th>Enchiladas</th>
-                          <th>Milanesa</th>
-                        </tr>
-                        <tr>
-                          <td class=" text-center"><%=@normal%></td>
-                          <td class=" text-center"><%=@enchiladas%></td>
-                          <td class=" text-center"><%=@milanesa%></td>
-                        </tr>
-                        </table>
+
+                          <h4 class=" text-center">Normal: <%=@normal%></h4>
+                          <h4 class=" text-center">Milanesa: <%=@milanesa%></h4>
+                          <h4 class=" text-center">Enchiladas: <%=@enchiladas%></h4>
+                          <h4 class=" text-center">Sin crema: <%=@crema%></h4>
+                          <h4 class=" text-center">Sin lechuga: <%=@lechuga%></h4>
+                          <a href=" <%= new_formulario_path() %>" class="btn btn-primary m-3" >Agregar Comida</a>
                         </div>
                     </div>
 
                 </div>
-
 
                 <div class="list-group col-md-8">
                     <% @formularios.each do |p| %>
@@ -53,10 +47,6 @@
                         </div>
                         <%end%>
                 </div>
-
-
-
-
 
             </div>
 
