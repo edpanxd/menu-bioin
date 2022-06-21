@@ -63,7 +63,7 @@ class FormulariosController < ApplicationController
     @enchiladas = Formulario.where(fecha: Date.today, platillo: 'Enchiladas').count
     @crema = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Crema').count
     @lechuga = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Lechuga').count
-    @milanesa = Formulario.where(fecha: Date.today, platillo: 'Milanesa').count
+    @pechuga = Formulario.where(fecha: Date.today, platillo: 'Pechuga asada').count
     @normal = Formulario.where(fecha: Date.today, platillo: 'Normal').count
     respond_to do |format|
       format.html
