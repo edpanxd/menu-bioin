@@ -54,7 +54,7 @@
 
         <% end %>
 
-        <%if Time.now < Time.parse("10:30") %>
+
 
         <div class="col-md-4">
         <h3 class="text-light text d-flex justify-content-center">Normal</h3>
@@ -81,16 +81,7 @@
         <a type="button" id="lol4" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-comida="Enchiladas Sin Lechuga" class="mx-auto d-flex justify-content-center m-2 img-fluid">
         <img src="/images/enchiladas.jpg" class="cicle" alt=""></a>
         </div>
-        <% else %>
-        <script>
-          Swal.fire({
-          icon: 'error',
-          title: 'El horario para solicitar comida a termindo',
-          showConfirmButton: false,
-          timer: 1800
-          })
-        </script>
-        <% end %>
+
       </div>
 
 </div>
