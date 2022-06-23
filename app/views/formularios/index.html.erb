@@ -31,9 +31,14 @@
                         <div class="col-md-12">
                             <div class="card-body">
 
+                                  <div style="float: left">
+                                    <%=image_tag @foto1, style: 'width:80px;', class:"me-1" %>
+                                  </div>
+                                  <div>
+                                  <h5 class="card-title"><%= f.repartidor_1 %> - <%= @area1 %></h5>
+                                  </div>
 
 
-                                <h5 class="card-title"><%=image_tag @foto1, style: 'width:80px;', class:"me-1" %><%= f.repartidor_1 %> - <%= @area1 %></h5>
 
                             </div>
                         </div>
@@ -43,7 +48,13 @@
                     <div class="row g-0">
                         <div class="col-md-12">
                             <div class="card-body">
-                                <h5 class="card-title"><%=image_tag @foto2, style: 'width:80px;', class:"me-1" %><%= f.repartidor_2 %> - <%= @area2 %></h5>
+                            <div style="float: left">
+                                    <%=image_tag @foto2, style: 'width:80px;', class:"me-1" %>
+                            </div>
+                            <div>
+                            <h5 class="card-title"><%= f.repartidor_2 %> - <%= @area2 %></h5>
+                            </div>
+
 
                             </div>
                         </div>
