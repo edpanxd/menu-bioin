@@ -11,23 +11,217 @@
             <div class="row">
 
                 <div class="col-md-4">
-                    <div class="card text-white bg-dark m-3" style="max-width: 18rem; border-radius: 10%">
-                        <div class="card-header">Cantidad</div>
-                        <div class="card-body">
 
-                          <h4 class="text-left">Normal: <%=@normal%></h4>
-                          <h4 class="text-left">Pechuga asada: <%=@pechuga%></h4>
-                          <h4 class="text-left">Enchiladas: <%=@enchiladas%></h4>
-                          <h4 class="text-left">Sin crema: <%=@crema%></h4>
-                          <h4 class="text-left">Sin lechuga: <%=@lechuga%></h4>
+                  <div class="card bg-success text-white" style="border-radius: 10%">
+                    <div class="card-body mx-4">
+                      <div class="container">
+                        <p class="my-5 mx-5" style="font-size: 30px;">Totales</p>
+                        <div class="row">
 
+                          <hr>
+                          <div class="col-xl-10 ">
+                            <p>Normal</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"><%=@normal%>
+                            </p>
+                          </div>
+                          <hr>
                         </div>
+                        <div class="row">
+                          <div class="col-xl-10">
+                            <p>Pechuga</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"><%=@pechuga%>
+                            </p>
+                          </div>
+                          <hr>
+                        </div>
+                        <div class="row">
+                          <div class="col-xl-10">
+                            <p>Enchiladas</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"><%=@enchiladas%>
+                            </p>
+                          </div>
+                          <hr>
+                        </div>
+                        <div class="row">
+                          <div class="col-xl-10">
+                            <p>E. sin crema</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"><%=@crema%>
+                            </p>
+                          </div>
+                          <hr>
+                        </div>
+                        <div class="row">
+                          <div class="col-xl-10">
+                            <p>E. sin lechuga</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"><%=@lechuga%>
+                            </p>
+                          </div>
+
+                          <hr style="border: 2px solid black;">
+                        </div>
+
+
+
+                      </div>
                     </div>
+                  </div>
+                    <br>
+                    <br>
+                  <div class="card bg-secondary text-white" style="border-radius: 10%">
+                    <div class="card-body mx-4">
+                      <div class="container">
+                        <p class="my-5 mx-5" style="font-size: 30px;">Total PL1</p>
+                        <div class="row">
+
+                          <hr>
+                          <div class="col-xl-10 ">
+                            <p>Normal</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"><%=@normal_pl1%>
+                            </p>
+                          </div>
+                          <hr>
+                        </div>
+                        <div class="row">
+                          <div class="col-xl-10">
+                            <p>Pechuga</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"><%=@pechuga_pl1%>
+                            </p>
+                          </div>
+                          <hr>
+                        </div>
+                        <div class="row">
+                          <div class="col-xl-10">
+                            <p>Enchiladas</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"> <%=@enchiladas_pl1%>
+                            </p>
+                          </div>
+                          <hr>
+                        </div>
+                        <div class="row">
+                          <div class="col-xl-10">
+                            <p>E. sin crema</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"> <%=@crema_pl1%>
+                            </p>
+                          </div>
+                          <hr>
+                        </div>
+                        <div class="row">
+                          <div class="col-xl-10">
+                            <p>E. sin lechuga</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"><%=@lechuga_pl1%>
+                            </p>
+                          </div>
+
+                          <hr style="border: 2px solid black;">
+                        </div>
+
+
+
+                      </div>
+                    </div>
+                  </div>
+                    <br>
+                    <br>
+                  <div class="card bg-light text-dark" style="border-radius: 10%">
+                    <div class="card-body mx-4">
+                      <div class="container">
+                        <p class="my-5 mx-5" style="font-size: 29px;">Total PL2</p>
+                        <div class="row">
+
+                          <hr>
+                          <div class="col-xl-10 ">
+                            <p>Normal</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"><%=@normal_pl2%>
+                            </p>
+                          </div>
+                          <hr>
+                        </div>
+                        <div class="row">
+                          <div class="col-xl-10">
+                            <p>Pechuga</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"><%=@pechuga_pl2%>
+                            </p>
+                          </div>
+                          <hr>
+                        </div>
+                        <div class="row">
+                          <div class="col-xl-10">
+                            <p>Enchiladas</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"><%=@enchiladas_pl2%>
+                            </p>
+                          </div>
+                          <hr>
+                        </div>
+                        <div class="row">
+                          <div class="col-xl-10">
+                            <p>E. sin crema</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"><%=@crema_pl2%>
+                            </p>
+                          </div>
+                          <hr>
+                        </div>
+                        <div class="row">
+                          <div class="col-xl-10">
+                            <p>E. sin lechuga</p>
+                          </div>
+                          <div class="col-xl-2">
+                            <p class="float-end"><%=@lechuga_pl2%>
+                            </p>
+                          </div>
+
+                          <hr style="border: 2px solid black;">
+                        </div>
+
+
+
+                      </div>
+                    </div>
+                  </div>
 
                 </div>
 
                 <div class="list-group col-md-8">
-                    <% @formularios.each do |p| %>
+
+                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="btn btn-outline-light active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><h5>Lista PL1</h5></button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="btn btn-outline-light" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><h5>Lista PL2</h5></button>
+                        </li>
+
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <% @formularios.each do |p| %>
                         <div class="list-group-item bg-black text-white opacity-75 border border-white ms-1">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1">
@@ -46,6 +240,30 @@
                                 class: "btn btn-danger bi bi-trash3-fill" %>
                         </div>
                         <%end%>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <% @formularios2.each do |p| %>
+                        <div class="list-group-item bg-black text-white opacity-75 border border-white ms-1">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">
+                                    <%= p.nombre %>
+                                </h5>
+                                <small>
+                                    <%= p.fecha %>
+                                </small>
+                            </div>
+                            <p class="mb-1">
+                                <%= p.platillo %>
+                            </p>
+                            <a href="<%= edit_formulario_path(p) %>" class="btn btn-primary"><i
+                                    class="bi bi-pencil-square"></i></a>
+                            <%=link_to "" , formulario_path(p), method: "delete" ,
+                                class: "btn btn-danger bi bi-trash3-fill" %>
+                        </div>
+                    <%end%>
+                        </div>
+
+                      </div>
                 </div>
 
             </div>

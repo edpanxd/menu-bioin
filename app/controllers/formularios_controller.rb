@@ -28,7 +28,7 @@ class FormulariosController < ApplicationController
   end
 
   def create
-    if Time.now < Time.parse("10:30")
+    if Time.now < Time.parse("17:30")
       @formulario = Formulario.new(formulario_params)
       if @formulario.save
         redirect_to formularios_path, notice: 'new'
@@ -63,12 +63,23 @@ class FormulariosController < ApplicationController
   end
 
   def lista
-    @formularios = Formulario.where(fecha: Date.today).order(nombre: 'ASC')
+    @formularios = Formulario.where(fecha: Date.today).where.not("nombre LIKE 'PL2%'").order(nombre: 'ASC')
+    @formularios2 = Formulario.where(fecha: Date.today).where("nombre LIKE 'PL2%'").order(nombre: 'ASC')
     @enchiladas = Formulario.where(fecha: Date.today, platillo: 'Enchiladas').count
     @crema = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Crema').count
     @lechuga = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Lechuga').count
     @pechuga = Formulario.where(fecha: Date.today, platillo: 'Pechuga asada').count
     @normal = Formulario.where(fecha: Date.today, platillo: 'Normal').count
+    @enchiladas_pl1 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas').where.not("nombre LIKE 'PL2%'").count
+    @crema_pl1 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Crema').where.not("nombre LIKE 'PL2%'").count
+    @lechuga_pl1 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Lechuga').where.not("nombre LIKE 'PL2%'").count
+    @pechuga_pl1 = Formulario.where(fecha: Date.today, platillo: 'Pechuga asada').where.not("nombre LIKE 'PL2%'").count
+    @normal_pl1 = Formulario.where(fecha: Date.today, platillo: 'Normal').where.not("nombre LIKE 'PL2%'").count
+    @enchiladas_pl2 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas').where("nombre LIKE 'PL2%'").count
+    @crema_pl2 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Crema').where("nombre LIKE 'PL2%'").count
+    @lechuga_pl2 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Lechuga').where("nombre LIKE 'PL2%'").count
+    @pechuga_pl2 = Formulario.where(fecha: Date.today, platillo: 'Pechuga asada').where("nombre LIKE 'PL2%'").count
+    @normal_pl2 = Formulario.where(fecha: Date.today, platillo: 'Normal').where("nombre LIKE 'PL2%'").count
     respond_to do |format|
       format.html
       format.pdf do

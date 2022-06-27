@@ -44,11 +44,48 @@
         <tr style="height:14pt">
             <td style="width:441pt" colspan="3" bgcolor="#000000">
                 <p class="s1" style="padding: 3pt;text-indent: 0pt;line-height: 13pt;text-align: center;">
-                  LISTA DE COMIDA</p>
+                  LISTA DE COMIDA PL1</p>
             </td>
         </tr>
         <%suma = 0%>
         <%@formularios.each do |p| %>
+        <tr style="height:14pt">
+            <td style="width:10pt;border-left-style:solid;border-left-width:1pt;border-left-color:#666666;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#666666;border-right-style:solid;border-right-width:1pt;border-right-color:#666666"
+                >
+                <p style="margin: 3px; text-indent: 0pt;text-align: left;"><%= suma= suma+1 %> </p>
+            </td>
+            <td style="width:280pt;border-left-style:solid;border-left-width:1pt;border-left-color:#666666;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#666666;border-right-style:solid;border-right-width:1pt;border-right-color:#666666"
+                >
+                <p style="margin: 3px; text-indent: 0pt;text-align: left;"> <%= p.nombre %></p>
+            </td>
+            <td style="width:210pt;border-left-style:solid;border-left-width:1pt;border-left-color:#666666;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#666666;border-right-style:solid;border-right-width:1pt;border-right-color:#666666"
+                >
+                <p style="margin: 3px; text-indent: 0pt;text-align: left;"> <%=p.platillo %></p>
+            </td>
+
+        </tr>
+        <% end %>
+        <tr style="height:14pt">
+            <td style="width:441pt;border-top-style:solid;border-top-width:1pt;border-top-color:#666666;border-left-style:solid;border-left-width:1pt;border-left-color:#666666;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#666666;border-right-style:solid;border-right-width:1pt;border-right-color:#666666"
+                colspan="3" bgcolor="#CCCCCC">
+                <p class="s2" style="padding-left: 5pt;text-indent: 0pt;line-height: 13pt;text-align: left;">
+                  Nota: A toda persona que no este inlcuida en este documento no entregar al solicitante y dar aviso a FH de inmediato
+                </p>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <table style="border-collapse:collapse;margin-left:5.33pt" cellspacing="0">
+        <tr style="height:14pt">
+            <td style="width:441pt" colspan="3" bgcolor="#000000">
+                <p class="s1" style="padding: 3pt;text-indent: 0pt;line-height: 13pt;text-align: center;">
+                  LISTA DE COMIDA PL2</p>
+            </td>
+        </tr>
+        <%suma = 0%>
+        <%@formularios2.each do |p| %>
         <tr style="height:14pt">
             <td style="width:10pt;border-left-style:solid;border-left-width:1pt;border-left-color:#666666;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#666666;border-right-style:solid;border-right-width:1pt;border-right-color:#666666"
                 >
