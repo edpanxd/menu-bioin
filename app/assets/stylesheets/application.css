@@ -21,8 +21,8 @@ body {
     margin: 0;
     background-image: linear-gradient(rgba(40, 62, 94, 0.6), rgba(40, 62, 94, 0.6)), url(comida.jpg);
     background-position: center;
-    background-size: cover;
-    background-repeat: repeat, no-repeat;
+    background-size: auto;
+    background-repeat: repeat;
 }
 
 .text {
