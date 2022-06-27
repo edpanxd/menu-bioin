@@ -125,10 +125,9 @@
   </div>
 </div>
 
-<% if notice == "nuevo" %>
+<% if notice == "new" %>
   <script>
   Swal.fire({
-
   icon: 'success',
   title: 'Pedido Realizado',
   showConfirmButton: false,
@@ -140,9 +139,19 @@
 <% if alert == "error" %>
   <script>
   Swal.fire({
-
   icon: 'error',
   title: 'Empleado Ya Registrado',
+  showConfirmButton: false,
+  timer: 1500
+  })
+  </script>
+<%end %>
+
+<% if alert == "time" %>
+  <script>
+  Swal.fire({
+  icon: 'error',
+  title: 'El tiempo de solicitud de comida a terminado',
   showConfirmButton: false,
   timer: 1500
   })

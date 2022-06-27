@@ -28,11 +28,15 @@ class FormulariosController < ApplicationController
   end
 
   def create
-    @formulario = Formulario.new(formulario_params)
-    if @formulario.save
-      redirect_to formularios_path, notice: 'nuevo'
+    if Time.now < Time.parse("10:30")
+      @formulario = Formulario.new(formulario_params)
+      if @formulario.save
+        redirect_to formularios_path, notice: 'new'
+      else
+        redirect_to formularios_path, alert: 'error'
+      end
     else
-      redirect_to formularios_path, alert: 'error'
+      redirect_to formularios_path, alert: 'time'
     end
   end
 
