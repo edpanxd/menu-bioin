@@ -28,7 +28,7 @@ class FormulariosController < ApplicationController
   end
 
   def create
-    if Time.now < Time.parse("10:30")
+    if Time.now < Time.parse("13:30")
       @formulario = Formulario.new(formulario_params)
       if @formulario.save
         redirect_to formularios_path, notice: 'new'
@@ -70,16 +70,19 @@ class FormulariosController < ApplicationController
     @lechuga = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Lechuga').count
     @pechuga = Formulario.where(fecha: Date.today, platillo: 'Pechuga asada').count
     @normal = Formulario.where(fecha: Date.today, platillo: 'Normal').count
+    @cancelada = Formulario.where(fecha: Date.today, platillo: 'Cancelar').count
     @enchiladas_pl1 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas').where.not("nombre LIKE 'PL2%'").count
     @crema_pl1 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Crema').where.not("nombre LIKE 'PL2%'").count
     @lechuga_pl1 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Lechuga').where.not("nombre LIKE 'PL2%'").count
     @pechuga_pl1 = Formulario.where(fecha: Date.today, platillo: 'Pechuga asada').where.not("nombre LIKE 'PL2%'").count
     @normal_pl1 = Formulario.where(fecha: Date.today, platillo: 'Normal').where.not("nombre LIKE 'PL2%'").count
+    @cancelada_pl1 = Formulario.where(fecha: Date.today, platillo: 'Cancelar').where.not("nombre LIKE 'PL2%'").count
     @enchiladas_pl2 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas').where("nombre LIKE 'PL2%'").count
     @crema_pl2 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Crema').where("nombre LIKE 'PL2%'").count
     @lechuga_pl2 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Lechuga').where("nombre LIKE 'PL2%'").count
     @pechuga_pl2 = Formulario.where(fecha: Date.today, platillo: 'Pechuga asada').where("nombre LIKE 'PL2%'").count
     @normal_pl2 = Formulario.where(fecha: Date.today, platillo: 'Normal').where("nombre LIKE 'PL2%'").count
+    @cancelada_pl2 = Formulario.where(fecha: Date.today, platillo: 'Cancelar').where("nombre LIKE 'PL2%'").count
     respond_to do |format|
       format.html
       format.pdf do

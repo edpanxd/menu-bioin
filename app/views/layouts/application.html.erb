@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Menu Bioin</title>
+    <%= favicon_link_tag '/images/logo.png' %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -124,6 +125,13 @@
     })
 
     $("#lol4").click(function () {
+    var platillo =$(this).data('comida')
+
+    $("#platillo").val(platillo)
+
+    })
+
+    $("#lol5").click(function () {
     var platillo =$(this).data('comida')
 
     $("#platillo").val(platillo)
