@@ -144,12 +144,12 @@
     $('input#filtersearch').bind('keyup change', function() {
         if ($(this).val().trim().length !== 0) {
 
-            $('.names').show().hide().each(function() {
+            $('.pl1').show().hide().each(function() {
                 if ($(this).is(':icontains(' + $('input#filtersearch').val() + ')'))
                     $(this).show();
             });
         } else {
-            $('.names').show().each(function() {
+            $('.pl1').show().each(function() {
                 $(this).show();
             });
         }
@@ -160,5 +160,24 @@
     };
 
   </script>
+  <script>
+    $('input#filtersearch2').bind('keyup change', function() {
+        if ($(this).val().trim().length !== 0) {
 
+            $('.pl2').show().hide().each(function() {
+                if ($(this).is(':icontains(' + $('input#filtersearch2').val() + ')'))
+                    $(this).show();
+            });
+        } else {
+            $('.pl2').show().each(function() {
+                $(this).show();
+            });
+        }
+    });
+
+    $.expr[':'].icontains = function(obj, index, meta, stack) {
+        return (obj.textContent || obj.innerText || jQuery(obj).text() || '').toLowerCase().indexOf(meta[3].toLowerCase()) >= 0;
+    };
+
+  </script>
 </html>

@@ -249,9 +249,9 @@
                       </ul>
                       <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <input class="form-control m-1" type="text" id="filtersearch" value="" placeholder="Buscar Empleado"/>
+                        <input class="form-control m-1" type="text" id="filtersearch" value="" placeholder="Buscar Empleado PL1"/>
                         <% @formularios.each do |p| %>
-                        <div class="list-group-item bg-black text-white opacity-75 border border-white ms-1 names">
+                        <div class="list-group-item bg-black text-white opacity-75 border border-white ms-1 pl1">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1">
                                     <%= p.nombre %>
@@ -271,8 +271,9 @@
                         <%end%>
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <input class="form-control m-1" type="text" id="filtersearch2" value="" placeholder="Buscar Empleado PL2"/>
                         <% @formularios2.each do |p| %>
-                        <div class="list-group-item bg-black text-white opacity-75 border border-white ms-1">
+                        <div class="list-group-item bg-black text-white opacity-75 border border-white ms-1 pl2">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1">
                                     <%= p.nombre %>
