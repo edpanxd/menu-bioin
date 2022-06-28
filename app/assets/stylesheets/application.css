@@ -19,8 +19,8 @@
 html,
 body {
     margin: 0;
-    background-image: linear-gradient(rgba(40, 62, 94, 0.6), rgba(40, 62, 94, 0.6)), url(comida.jpg);
-    background-position: center;
+    background-image: linear-gradient(rgba(34, 79, 128, 0.6), rgba(34, 79, 128, 0.6)), url(comida.jpg);
+    background-position: top;
     background-size: auto;
     background-repeat: repeat;
 }
@@ -36,12 +36,12 @@ body {
 .cicle:hover {
     border-radius: 45%;
     -webkit-border-radius: 45%;
-    box-shadow: 0px 0px 15px 15px #31308398;
-    -webkit-box-shadow: 0px 0px 15px 15px #31308398;
+    box-shadow: 0px 0px 15px 15px #326CAC;
+    -webkit-box-shadow: 0px 0px 15px 15px #326CAC;
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
 }
 
 .bg-color {
-    background-color: rgb(39, 39, 109);
+    background-color: rgb(34, 79, 128);
 }
