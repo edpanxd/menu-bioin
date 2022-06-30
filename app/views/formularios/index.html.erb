@@ -91,15 +91,15 @@
           width: 600,
           padding: '3em',
           color: '#ffffff',
-          background: '#fff url(/images/fondo.png)',
+          background: '#fff url(/images/fondo.jpg)',
           backdrop: `
-            rgba(233, 38, 38, 0.3)
+            rgb(65, 65, 66, 0.8)
             url("/images/nyan-cat.gif")
             left top
             no-repeat
           `,
            confirmButtonText: 'Vuelva Mañana',
-        })
+          })
         </script>
         <% end %>
       </div>
@@ -131,11 +131,11 @@
   </div>
 </div>
 <script>
-document.getElementById('myImage').draggable = false;
-document.getElementById('myImage2').draggable = false;
+  document.getElementById('myImage').draggable = false;
+  document.getElementById('myImage2').draggable = false;
 </script>
 <script>
-document.onkeydown = function(e) {
+  document.onkeydown = function(e) {
     if (
         (
          e.keyCode === 44 ||
@@ -152,7 +152,7 @@ document.onkeydown = function(e) {
     } else {
         return true;
     }
-};
+  };
 </script>
 
 
