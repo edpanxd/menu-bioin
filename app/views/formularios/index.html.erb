@@ -51,7 +51,7 @@
             </div>
         <% end %>
 
-      <%if Time.now < Time.parse("10:30") %>
+      <%if Time.now < Time.parse("12:30") %>
 
         <div class="col-md-4">
           <h3 class="text-light text d-flex justify-content-center">Normal</h3>
@@ -130,6 +130,28 @@
     </div>
   </div>
 </div>
+
+<script>
+document.onkeydown = function(e) {
+    if (
+        (
+         e.keyCode === 44 ||
+         e.keyCode === 16 ||
+         e.keyCode === 91 ||
+         e.keyCode === 17)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'No permitido!',
+          backdrop: `rgba(0,0,128,1)`
+        })
+        return false;
+    } else {
+        return true;
+    }
+};
+</script>
+
 
 <% if notice == "new" %>
   <script>
