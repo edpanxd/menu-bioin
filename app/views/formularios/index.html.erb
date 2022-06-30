@@ -25,7 +25,7 @@
                         <div class="col-md-12">
                             <div class="card-body">
                                   <div style="float: left">
-                                    <%=image_tag @foto1, style: 'width:70px;', class:"m-1" %>
+                                    <%=image_tag @foto1, style: 'width:70px;', class:"m-1", id:"myImage" %>
                                   </div>
                                   <div>
                                     <h5 class="card-title"><%= f.repartidor_1 %> - <%= @area1 %></h5>
@@ -39,7 +39,7 @@
                         <div class="col-md-12">
                             <div class="card-body">
                               <div style="float: left">
-                                <%=image_tag @foto2, style: 'width:70px;', class:"m-1" %>
+                                <%=image_tag @foto2, style: 'width:70px;', class:"m-1", id:"myImage2" %>
                               </div>
                               <div>
                                 <h5 class="card-title"><%= f.repartidor_2 %> - <%= @area2 %></h5>
@@ -130,7 +130,10 @@
     </div>
   </div>
 </div>
-
+<script>
+document.getElementById('myImage').draggable = false;
+document.getElementById('myImage2').draggable = false;
+</script>
 <script>
 document.onkeydown = function(e) {
     if (
