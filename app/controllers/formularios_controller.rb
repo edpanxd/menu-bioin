@@ -71,21 +71,21 @@ class FormulariosController < ApplicationController
     @pechuga = Formulario.where(fecha: Date.today, platillo: 'Pechuga asada').count
     @normal = Formulario.where(fecha: Date.today, platillo: 'Normal').count
     @cancelada = Formulario.where(fecha: Date.today, platillo: 'Cancelar').count
-    @total = Formulario.where(fecha: Date.today).count
+    @total = Formulario.where(fecha: Date.today).where.not(platillo: 'Cancelar').count
     @enchiladas_pl1 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas').where.not("nombre LIKE 'PL2%'").count
     @crema_pl1 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Crema').where.not("nombre LIKE 'PL2%'").count
     @lechuga_pl1 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Lechuga').where.not("nombre LIKE 'PL2%'").count
     @pechuga_pl1 = Formulario.where(fecha: Date.today, platillo: 'Pechuga asada').where.not("nombre LIKE 'PL2%'").count
     @normal_pl1 = Formulario.where(fecha: Date.today, platillo: 'Normal').where.not("nombre LIKE 'PL2%'").count
     @cancelada_pl1 = Formulario.where(fecha: Date.today, platillo: 'Cancelar').where.not("nombre LIKE 'PL2%'").count
-    @total_pl1 = Formulario.where(fecha: Date.today).where.not("nombre LIKE 'PL2%'").count
+    @total_pl1 = Formulario.where(fecha: Date.today).where.not("nombre LIKE 'PL2%'", platillo: 'Cancelar').count
     @enchiladas_pl2 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas').where("nombre LIKE 'PL2%'").count
     @crema_pl2 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Crema').where("nombre LIKE 'PL2%'").count
     @lechuga_pl2 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Lechuga').where("nombre LIKE 'PL2%'").count
     @pechuga_pl2 = Formulario.where(fecha: Date.today, platillo: 'Pechuga asada').where("nombre LIKE 'PL2%'").count
     @normal_pl2 = Formulario.where(fecha: Date.today, platillo: 'Normal').where("nombre LIKE 'PL2%'").count
     @cancelada_pl2 = Formulario.where(fecha: Date.today, platillo: 'Cancelar').where("nombre LIKE 'PL2%'").count
-    @total_pl2 = Formulario.where(fecha: Date.today).where("nombre LIKE 'PL2%'").count
+    @total_pl2 = Formulario.where(fecha: Date.today).where("nombre LIKE 'PL2%'").where.not(platillo: 'Cancelar').count
     respond_to do |format|
       format.html
       format.pdf do
