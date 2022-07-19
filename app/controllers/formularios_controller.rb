@@ -78,7 +78,7 @@ class FormulariosController < ApplicationController
     @pechuga_pl1 = Formulario.where(fecha: Date.today, platillo: 'Pechuga asada').where.not("nombre LIKE 'PL2%'").count
     @normal_pl1 = Formulario.where(fecha: Date.today, platillo: 'Normal').where.not("nombre LIKE 'PL2%'").count
     @cancelada_pl1 = Formulario.where(fecha: Date.today, platillo: 'Cancelar').where.not("nombre LIKE 'PL2%'").count
-    @total_pl1 = Formulario.where(fecha: Date.today).where.not("nombre LIKE 'PL2%'", platillo: 'Cancelar').count
+    @total_pl1 = Formulario.where(fecha: Date.today).where.not("nombre LIKE 'PL2%'").where.not( platillo: 'Cancelar').count
     @enchiladas_pl2 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas').where("nombre LIKE 'PL2%'").count
     @crema_pl2 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Crema').where("nombre LIKE 'PL2%'").count
     @lechuga_pl2 = Formulario.where(fecha: Date.today, platillo: 'Enchiladas Sin Lechuga').where("nombre LIKE 'PL2%'").count
