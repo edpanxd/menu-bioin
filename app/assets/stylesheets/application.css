@@ -19,7 +19,7 @@
 html,
 body {
     margin: 0;
-    background-image: linear-gradient(rgb(65, 65, 66, 0.6), rgb(65, 65, 66, 0.6)), url(comidan.jpg);
+    background-image: linear-gradient(rgb(65, 65, 66, 0.6), rgb(65, 65, 67, 0.6)), url(comidan.jpg);
     background-position: top;
     background-size: cover;
     background-repeat: repeat;
