@@ -1,3 +1,595 @@
 // Place all the styles related to the formularios controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+    box-sizing: border-box;
+}
+
+.body {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: calc(max(100vh, 400px));
+    padding: 60px;
+    color: #ffff;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.d {
+    width: 20px;
+    fill: #fff;
+    opacity: .5;
+}
+
+div article {
+    width: 100%;
+    max-width: 1200px;
+}
+
+div article header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 400px;
+    padding: 50px;
+    border-radius: 16px;
+    color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div article header .upper-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+div article header .upper-header .mini-title {
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+div article header .upper-header .date-since {
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    font-size: 0.875rem;
+}
+
+div article header .upper-header .date-since .date-value {
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+div article header .upper-header .date-since svg {
+    width: 20px;
+    margin-left: 10px;
+}
+
+div article header .lower-header {
+    padding-top: 50px;
+}
+
+div article header .lower-header .tags-container {
+    display: flex;
+    align-items: center;
+    opacity: 0.75;
+    margin-bottom: 12px;
+}
+
+div article header .lower-header .tags-container>span:not(:nth-child(2))::before {
+    content: ", ";
+}
+
+div article header .lower-header .tags-container svg {
+    width: 20px;
+    margin-right: 10px;
+}
+
+div article header .lower-header .tags-container span {
+    font-size: 0.875rem;
+}
+
+div article header .lower-header .title {
+    margin: 20px 0;
+    font-size: 3rem;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+div article header .lower-header .subtitle {
+    width: 90%;
+    margin-top: 10px;
+    opacity: .85;
+    line-height: 1.75;
+    font-size: 1.7rem;
+}
+
+@media screen and (max-width: 1024px) {
+    div {}
+    div article header .lower-header .subtitle {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    div article header .lower-header .title {
+        word-break: break-all;
+    }
+    div article .summary {
+        flex-direction: column;
+    }
+    div article .summary .summary-item:not(:last-child) {
+        padding-bottom: 30px;
+    }
+    div article .main-article .gallery {
+        grid-template-areas: "img1 img1" "img1 img1" "img2 img3" "img4 img5";
+    }
+}
+
+@media screen and (max-width: 425px) {
+    div {
+        padding: 25px;
+    }
+    div article header .upper-header .date-since {
+        display: none;
+    }
+}
+
+
+/* parte de imagenes  */
+
+@import url(https://pro.fontawesome.com/releases/v5.11.2/css/all.css);
+:root {
+    --user-button-circle: rgba(0, 0, 0, 0.025);
+    --user-button-cardborder: rgba(255, 255, 255, 0.25);
+    --user-button-text: #323133;
+    --user-button-shadow: rgba(0, 0, 0, 0.1);
+}
+
+div #user-button {
+    z-index: 1000;
+    bottom: 1rem !important;
+    right: 1rem !important;
+    color: var(--user-button-text);
+    transition: 1s 0s ease-out;
+    -webkit-animation: slide 3s ease-out forwards;
+    animation: slide 3s ease-out forwards;
+}
+
+@-webkit-keyframes slide {
+    0%,
+    50% {
+        opacity: 0;
+        display: block !important;
+    }
+    100% {
+        opacity: 1;
+        display: block !important;
+    }
+}
+
+@keyframes slide {
+    0%,
+    50% {
+        opacity: 0;
+        display: block !important;
+    }
+    100% {
+        opacity: 1;
+        display: block !important;
+    }
+}
+
+div #user-button .u-card {
+    border-radius: 100%;
+    box-shadow: 0 0 1rem -0.25rem var(--user-button-shadow), inset 0 0 1rem -0.75rem var(--user-button-shadow);
+}
+
+div #user-button .u-main {
+    cursor: pointer;
+    --user-button-background: var(--user-button-main, #EC87C0);
+}
+
+div #user-button .u-main img {
+    height: 100%;
+    width: 100%;
+}
+
+div #user-button .u-main iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4rem;
+    height: 4rem;
+    opacity: 1;
+    transition: 0s 4s;
+}
+
+div #user-button .u-icons {
+    position: relative;
+    z-index: 950;
+    transform: translate(-50%, -50%);
+    background: var(--user-button-circle);
+    box-shadow: 0 0 0 0.125rem var(--user-button-cardborder);
+    border-radius: 100%;
+    transition: 0.25s;
+    opacity: 1 !important;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    /*&:before {
+     z-index:-1;
+     position:absolute;
+     top:0; right:0; bottom:0; left:0;
+     content:'';
+
+     backdrop-filter: blur(10px);
+  }*/
+}
+
+div #user-button .u-icons a {
+    color: inherit;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+}
+
+div #user-button .u-icons a div {
+    padding: 0.5rem;
+    transition: 0s;
+}
+
+div #user-button .u-icons a[href="https://twitter.com/Osorpenke"] {
+    position: relative;
+}
+
+div #user-button .u-icons a[href="https://twitter.com/Osorpenke"]:before {
+    content: "Middle Click";
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    white-space: pre;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s ease-in;
+    background: #fffc;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+div #user-button .u-icons a[href="https://twitter.com/Osorpenke"].show:before {
+    opacity: 1;
+    transition: 0.25s ease-out;
+}
+
+div #user-button .u-icons a[href="https://twitter.com/Osorpenke"] div {
+    color: #1da1f2;
+}
+
+div #user-button .u-icons a[href="https://codepen.io/z-"] div {
+    background: black;
+    color: white;
+}
+
+div #user-button .u-icons a.u-random div {
+    position: relative;
+    top: -1px;
+    -webkit-animation: diespin 2s linear infinite;
+    animation: diespin 2s linear infinite;
+}
+
+@-webkit-keyframes diespin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes diespin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+div #user-button .u-icons a.u-random:not(:hover) div {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+div #user-button .u-icons>* {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: var(--singlecolour);
+    border-radius: 100%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: 0.25s -0.05s;
+}
+
+div #user-button .u-icons>*:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div #user-button .u-icons>*:hover,
+div #user-button .u-icons>*:focus-within {
+    background: var(--hcolour);
+}
+
+div #user-button .u-icons>*:first-child:nth-last-child(1):nth-child(1),
+div #user-button .u-icons>*:first-child:nth-last-child(1)~*:nth-child(1) {
+    left: 25%;
+    top: 25%;
+}
+
+div #user-button .u-icons>*:first-child:nth-last-child(2):nth-child(1),
+div #user-button .u-icons>*:first-child:nth-last-child(2)~*:nth-child(1) {
+    left: 37.5%;
+    top: 18.75%;
+}
+
+div #user-button .u-icons>*:first-child:nth-last-child(2):nth-child(2),
+div #user-button .u-icons>*:first-child:nth-last-child(2)~*:nth-child(2) {
+    left: 18.75%;
+    top: 37.5%;
+}
+
+div #user-button .u-icons>*:first-child:nth-last-child(3):nth-child(1),
+div #user-button .u-icons>*:first-child:nth-last-child(3)~*:nth-child(1) {
+    left: 50%;
+    top: 15.625%;
+}
+
+div #user-button .u-icons>*:first-child:nth-last-child(3):nth-child(2),
+div #user-button .u-icons>*:first-child:nth-last-child(3)~*:nth-child(2) {
+    left: 25%;
+    top: 25%;
+}
+
+div #user-button .u-icons>*:first-child:nth-last-child(3):nth-child(3),
+div #user-button .u-icons>*:first-child:nth-last-child(3)~*:nth-child(3) {
+    left: 15.625%;
+    top: 50%;
+}
+
+div #user-button .u-icons>*:first-child:nth-last-child(4):nth-child(1),
+div #user-button .u-icons>*:first-child:nth-last-child(4)~*:nth-child(1) {
+    left: 62.5%;
+    top: 18.75%;
+}
+
+div #user-button .u-icons>*:first-child:nth-last-child(4):nth-child(2),
+div #user-button .u-icons>*:first-child:nth-last-child(4)~*:nth-child(2) {
+    left: 37.5%;
+    top: 18.75%;
+}
+
+div #user-button .u-icons>*:first-child:nth-last-child(4):nth-child(3),
+div #user-button .u-icons>*:first-child:nth-last-child(4)~*:nth-child(3) {
+    left: 18.75%;
+    top: 37.5%;
+}
+
+div #user-button .u-icons>*:first-child:nth-last-child(4):nth-child(4),
+div #user-button .u-icons>*:first-child:nth-last-child(4)~*:nth-child(4) {
+    left: 18.75%;
+    top: 62.5%;
+}
+
+div #user-button:hover .u-icons,
+div #user-button:focus-within .u-icons {
+    width: 300% !important;
+    height: 300% !important;
+}
+
+div.dark {
+    color: white;
+}
+
+div .credit {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: inherit;
+}
+
+div .options {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+    min-width: 600px;
+    max-width: 900px;
+    width: calc(100% - 100px);
+    height: 400px;
+    margin-top: 4%;
+}
+
+@media screen and (max-width: 718px) {
+    div .options {
+        min-width: 520px;
+    }
+    div .options .option:nth-child(5) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 638px) {
+    div .options {
+        min-width: 440px;
+    }
+    div .options .option:nth-child(4) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 558px) {
+    div .options {
+        min-width: 360px;
+    }
+    div .options .option:nth-child(3) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 478px) {
+    div .options {
+        min-width: 280px;
+    }
+    div .options .option:nth-child(2) {
+        display: none;
+    }
+}
+
+div .options .option {
+    position: relative;
+    overflow: hidden;
+    min-width: 60px;
+    margin: 10px;
+    background: var(--optionBackground, var(--defaultBackground, #E6E9ED));
+    background-size: auto 120%;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+div .options .option:nth-child(1) {
+    --defaultBackground: #ED5565;
+}
+
+div .options .option:nth-child(2) {
+    --defaultBackground: #FC6E51;
+}
+
+div .options .option:nth-child(3) {
+    --defaultBackground: #FFCE54;
+}
+
+div .options .option:nth-child(4) {
+    --defaultBackground: #2ECC71;
+}
+
+div .options .option:nth-child(5) {
+    --defaultBackground: #5D9CEC;
+}
+
+div .options .option:nth-child(6) {
+    --defaultBackground: #AC92EC;
+}
+
+div .options .option.active {
+    flex-grow: 10000;
+    transform: scale(1);
+    max-width: 600px;
+    margin: 0px;
+    border-radius: 40px;
+    background-size: auto 100%;
+    /*&:active {
+     transform:scale(0.9);
+  }*/
+}
+
+div .options .option.active .shadow {
+    box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+}
+
+div .options .option.active .label {
+    bottom: 20px;
+    left: 20px;
+}
+
+div .options .option.active .label .info>div {
+    left: 0px;
+    opacity: 1;
+}
+
+div .options .option:not(.active) {
+    flex-grow: 1;
+    border-radius: 30px;
+}
+
+div .options .option:not(.active) .shadow {
+    bottom: -40px;
+    box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+}
+
+div .options .option:not(.active) .label {
+    bottom: 10px;
+    left: 10px;
+}
+
+div .options .option:not(.active) .label .info>div {
+    left: 20px;
+    opacity: 0;
+}
+
+div .options .option .shadow {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 120px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+div .options .option .label {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    height: 90%;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+div .options .option .label .icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    max-width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: white;
+    color: var(--defaultBackground);
+}
+
+div .options .option .label .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    color: white;
+    white-space: pre;
+}
+
+div .options .option .label .info>div {
+    position: relative;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+}
+
+div .options .option .label .info .main {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+div .options .option .label .info .sub {
+    transition-delay: 0.1s;
+}

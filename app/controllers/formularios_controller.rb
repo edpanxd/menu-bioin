@@ -4,21 +4,18 @@ class FormulariosController < ApplicationController
     @platillos = Platillo.where(fecha: Date.today)
     @formulario = Formulario.new
     @empleados = Empleado.all
-    @a= Time.now
-    @foto1 = ""
-    @foto2 = ""
+    @a = Time.now
     @platillos.each do |f|
       @empleados.each do |h|
-        if f.repartidor_1 == h.nombre
-          @foto1 = h.imagen
-        @area1=h.area
-        end
-
-        if f.repartidor_2 == h.nombre
-          @foto2 = h.imagen
-          @area2 =h.area
-        end
+        f.repartidor_1 == h.nombre ? @area1=h.area :
+        f.repartidor_2 == h.nombre ? @area2 =h.area : next
       end
+    end
+    @lista = Formulario.where(fecha: Date.today).order(nombre: 'ASC')
+    @semana = Platillo.all.order(id: :desc)
+    @dias = []
+    @semana.each_with_index do |dia, index|
+      index <= 4 ? @dias.push(dia.comida+"\r\n \r\n#{dia.repartidor_1}"+"\r\n#{dia.repartidor_2}") : next
     end
   end
 
