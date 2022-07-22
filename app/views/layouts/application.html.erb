@@ -34,14 +34,6 @@
     <link href='https://fonts.googleapis.com/css?family=GFS Didot' rel='stylesheet'>
     <!--Fond family-->
 
-    <script type='text/javascript'>
-      $(function(){
-          $(document).bind("contextmenu",function(e){
-              return false;
-          });
-      });
-    </script>
-
   </head>
 
   <body>
@@ -189,6 +181,24 @@
     $.expr[':'].icontains = function(obj, index, meta, stack) {
         return (obj.textContent || obj.innerText || jQuery(obj).text() || '').toLowerCase().indexOf(meta[3].toLowerCase()) >= 0;
     };
+  </script>
+  <script>
+    $('input#filtersearch3').bind('keyup change', function() {
+        if ($(this).val().trim().length !== 0) {
 
+            $('.lista').show().hide().each(function() {
+                if ($(this).is(':icontains(' + $('input#filtersearch3').val() + ')'))
+                    $(this).show();
+            });
+        } else {
+            $('.lista').show().each(function() {
+                $(this).show();
+            });
+        }
+    });
+
+    $.expr[':'].icontains = function(obj, index, meta, stack) {
+        return (obj.textContent || obj.innerText || jQuery(obj).text() || '').toLowerCase().indexOf(meta[3].toLowerCase()) >= 0;
+    };
   </script>
 </html>
