@@ -9,7 +9,8 @@
     <%=form.label  :platillo, class: "form-label text-light" %>
     <%= form.select :platillo, [['Normal', 'Normal'],['Pechuga asada', 'Pechuga asada'], ['Enchiladas', 'Enchiladas'],['Enchiladas Sin Crema', 'Enchiladas Sin Crema'], ['Enchiladas Sin Lechuga', 'Enchiladas Sin Lechuga']], {}, {class: "form-select"} %>
     <%=form.label :nombre, class: "form-label text-light" %>
-    <%= form.select :nombre, options_for_select(@empleados.collect{ |u| [u.nombre, u.nombre] }), {}, {class: "form-control", id:"e6"} %>
+    <%= form.text_field :nombre, class: "form-control " %>
+   <%#  <%= form.select :nombre, options_for_select(@empleados.collect{ |u| [u.nombre, u.nombre] }), {}, {class: "form-control", id:"e6"} %>
     <%=form.label :fecha, class: "form-label text-light" %>
     <%=form.date_field  :fecha, class: "form-control ", :readonly => true, value: Date.today %>
 
