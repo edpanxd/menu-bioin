@@ -4,14 +4,14 @@
     <% @platillos.each do |comida| %>
       <%# Encabezado de comida %>
         <%# <header style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images5/Free-Download-4K-Food-HD-Wallpaper-Computer.jpg');"> %>
-        <header style="background-image: url('/images/bannerN.jpg'); font-family: 'christmas';  text-transform: uppercase; font-weight: bold;">
+        <header style="background-image: url('/images/reyes.jpg'); font-family: 'Bree Serif', serif; text-transform: uppercase;  color: ;">
             <div class="upper-header">
                 <div class="mini-title">Menu del dia</div>
             </div>
             <div class="lower-header">
               <p class="subtitle" style="white-space: pre-line"><%= comida.comida %></p>
               <audio autoplay id="bgAudio">
-               <source src='/Audio/Orquesta.mp3' type="audio/mpeg">
+               <source src='/Audio/tambor.mp3' type="audio/mpeg">
               </audio>
             </div>
         </header>
@@ -83,7 +83,7 @@
               background: '#fff url(/images/fondo.jpg)',
               backdrop: `
                 rgb(65, 65, 66, 0.8)
-                url("https://www.animatedimages.org/data/media/359/animated-santa-claus-image-0420.gif")
+                url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWEhgWFRYYGRgYHBgYGhgYGBkaGhoYGBgaGhgaGBgcIS4lHB4rIRgYJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHhISHDQhJSE0NDExNDE0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDExPzQ0NDQ/ND8/MTE0NDE0MTExMf/AABEIAOEA4AMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQMEBQYCBwj/xABCEAACAQMBBQUGBAEKBgMAAAABAgADBBEhBQYSMUEiUWFxkQcTFDKBsUJSocHRFSMzcoKSsuHw8TVzg6KzwhYkNP/EABkBAAMBAQEAAAAAAAAAAAAAAAACAwEEBf/EACERAAMBAAICAgMBAAAAAAAAAAABAhEDIRIxQVETIjIU/9oADAMBAAIRAxEAPwD2QxIsSYYEIQgAoiGEoNvbc932EGXI1J5Ln94t0pWsaZdPEYzbe1atzVftEU1OFQEgYHU45kyBTBT5WYY6hiP3jtyOEayCauZ59U29OtSksNBZ703CKF4gwAwC44m+pzrJ1PfOt+JEPqP3mQJiHMZclL5M/HL+DbLvu3Wmp8mP8Ir7+KBn3X/f/lMQxOJCqJxZUxly19h+GfhG1f2iMfkpp9Sx/hGG34uG0VUH9nOPUzBG0dDjOhlvaUsLgA+cHdfYj40vg0L71XXWt/dRBj1BjdPeW8Bytbi8HRCP0AmXu6hVsYI+uZ1YV2J64medfZqhHpm6m94uHNGqFWqBleH5XA547j4TXT58unelWWojFSDkMOnlPYd0NvC5o9r+kQAP49zDwM6eO9XZG5x9GihCEsTCEIQAIQhAAhCEACAhFEACJFiQAIQjVzXVELscKoyfKY3gFdtzaZpKFQZduXgOrGZK4Th1OSTqSepldfbRapWaprkns+Cj5RF+NZtGH1nBzX5PDq458UV+1nJOki29u3XnLKug5mNBgOXOTT6KiC2OOUZqUxnQiSUc8zHS6n8MNNWFW0aqgZyJMuKa81U58NZDYHqCPMRkyk5h29QEYxrOUrEZnPDOaqaeM3DHKH6arqeZPU6mLY0kXiLnBz34lalZhp1ndPawQjjQHB54zNa0k1gzt2oCeyNOkn7qbba3qhxqOTLnmpx+ukz20LpnfOuMmSrJDzjLUuhXPke+bJ2nTuKYemcg8weYPcZOnj+7O3mtqmuqNgOv/sPET12jVDKGU5DAEHwM6eO/JHNU+LO4QhKiBCEIAEIQgARREiiABEixIAEo98LkJatxEKGKrknHM/5S8mW9oCg2yBuRcZ/utEt/qzZ9mRcpjmCPDBkZ2GdNJVJRRDp6ZOJ3V2j0nnuTsnsuA5ZcHnDCqMmZ9tpP+E4kd7p3YAtM8WPhpvnGhiG3IjFjauqAq5z3EZEee7qcvd5PQqw19YYKxB2TnlOrh+JMgZ+msao0q7kcaBV7ywJ9BNDs7ZAzkwBVhkVQscYI+kdqUMTY3Ngo0wJW3dl4Q8npTzTMfWoZJM5NvlZcXFvjTEjml/ox9B0mVBsgekkUaOBpJhUDrHqY0mOmYV4XwnoO4u3lx8M5AI1pknmOq+YmGqVNdJHdjnTOeYI05eMeLcsnceSPeoTzrdnfVkAp3OWUaCoNSPB+/wA5v7W6SooZGVlPIqcids0qOSpaHoQhGFCEIQAIoiRRAAiRYkAOXcAEk4AGST0E8u353lWuwp0m7CEkt+ZsYGPAax/2h72AM1tTYALpUPUn8o8O+ebVLzi66dJDkbfQ8ol1K5PIwSkx55kWgM8tZfWlJyAQuRmQfReaItK0JxpLGxsO3qvrLK2pjGo1kgcIPjJ1TKeRPsUGMYBjz7PVtcSHa1Ma6ywoXf8AtNiU12TqmLb7OAx6ybgqOeI2l3HKlXKmbUpLoXy0iu51JMrrisT4x+4qgSvqPzxJaPMsi3T4+vOVdy5Osm3FXJkGoRz5xkiuDIGTk9J2biNPWkZmyY2DJEgNkzsAThZI4NOU0H0cKBLDZW0qluxak/CDjKn5T9JBKmdqMTFTRKpTPRdib4pUIWsAjHQHPZP8JqlYEZGoM8SJzNFu7vO9A8FQl0OPEp4jw8J0RzfDIVxtej0yEZtrlHUMjBlPIiPToT0kEURIommBOWOk6iQA+YNqVGNeqXzxGo5OeeeI5kL3gOk9F9ou5rJcvXpfJVJdhg4V8ANy5A85g0sW1yVGPX0kqWDyxm3ZuLTPSb3ZTlVAIOecy9mqodcZ016zU2zpwDGSfP8AhI1OlJZPZ2bGTjX8IyfTpOatMH8uQeXEeL66Rg7Q4QdMjux9m5yvutokZJYgdFP6Yk3GDaTrq+VKeCuvTrI9jtFWPPB9Jmbm6eq2FB85L2Zs5+IEj6mMliFfZutn3edM8vrLQVu/WZ20p8OMc8dJbgEJrEqvg1LsYu7lcypuLkHJBiXhyTIDUT1k0lp1zPRy9Uk843qTrOvdGIaB74/QxGq5PKO0kxjSTKdsMSQlvpyhoEVEzHOHEfWnjoYhQGLpOmNFu6IAepjppiRri5VNMjPdNJrRK9ZVHXPlItC7115GMVKxc5MOE45R0ujTWbu7wNbuMHNMntJ+48Z6nbXCuiuhyrAEHwM+f6LkODPQdxdulXFBz2X+Twbu8AZXjvHjI8kfKPRYoiRROo5wiRYkAAiUW1t0rO5OalFeL8ydhvqV5y9hMa0DFv7NrI8jVH/UP7iZTeHcz4d8q7sjcmJGQR0JE9fkPaluHoup6qefeBkRalYMqeniXwb8st9WnP8AJYYguTp5macWesX+Tzmcj3SyZU21oo0GD9JY0NnkkdPKT7ewAlklDSGMCHa2IWSa9McMkKsaqg8olLDZKStRGsitZE/7S9NvnpOloSLbLqyl+CHdO/5O8JchB1jbuBM7NV6VptQBriJwjEl1nGOchPU7sDz5QN1jbkeXnINZ1H4vqI/cVNMfqDK6rRJ1PKUkTCPc3fcNe8GQmQk5bWS/d88icGOjUNIgEbrVdcCcXdxjQDUzi2pEnJ1jmkm2p5Ms7clGVl0ZSGU+IOf2kaimDHsgeEVvsVo9n2VeitRSovJ1B8j1HrJs8y9nu2uCt8MxPC+WTPIMNSPqJ6aJ2xXkjipYwiRYkcUIQhAAnFcZVh4H7TuN3B7Df1T9pjAxFOnriP8ABGMxxLjocSLwfs7XynZqRBUEUIJOvsodK8R2E5accUnT01CPUjRrR51zrOAoHSScsZdEOo7GMshJzLVqazn3Yi+LGllN7qJ8MTLRqQ/1pE4BDB/IqHsl8ZX3ICy+u9PSZm9uDnAmz7GT6I7uNZGrnHKOMxkaqO6VSMK+oCXlvbJgSJRp9qThyjNmjvF4fpG6tQqM8vCIzyDePrpFS0xjNS6dXV0OGQhlI6Ecp7lunttbq1SpoHA4XUdHHP15zwdVxNZ7OtovRvFQ/JWHAw7m1Kt+31lorx6Ofknez2iJFiTqOcIQhAAnFcZVh4H7TuDCYzTz96g5RpmjNz/SOByVmHoTGNZw1fZdTqLG2bUayw45RUapEsKVXimzWhmEp3nSDSR20jTV/GY0BMdo28imoT1MQP4mK6NwlqdZ2xkIv4zr30XyRRLBxm75Hua4A741XuhmVl3dc8H+BmJm4RLy9Zs6kCV5A5850zkkxp3jpYOcVz108pGZjO67ZnKCMjB+knXWOOR4xFbHSc1Wz4Q9ho3VaRKgyZJI+sZ4cTV0K2JSpDOstbKsEqIwOOF0Powz+8gUl6zornzyPvM+TH6PoKJFiTvOIIQhAAhCBgzTyy4P8/U/rv8A4jJNP9Zw6fz9Qdzv/iJj6prPLt/szrX8ie7nGMd8lImRrGbgcOvSbIuHaVsc4MAZBNwp5GIlQ66xtMwmsmJyY0H7zOlr45zGjUI7yPcVyBgR+rrqOUhV0OsTCk+yDVryM7ZnVcHMbY4AlJSwrgy6iNss7qmV9zccM0Snh3WYZxO6Y0kJHzJqMMTcJutJCN0nDCNvWEYeqTMN0eZxmDPjHdOKKx4rnnAUY+IGQBLbdu1Fa8pJgY4gx8l7R+0q2pIOk9G9nW7pT/7TjBdcIp5hTzY92ZSF5MSqxHoESLEnYc4QgxkC52tRT5nGe4an0Ex0kBPhM5db3UUHZV2+nD95TXO9TudOwvcvP6mTrllDKWyA64uKmc/OT6yWnPlIVOsXqM+c9JMJnBqdNnVnRJUdnMqtq3ACkSzJykyu262CRKClFtDaDKdCZZ7Lvw4xxa41/wB5T1UXOT+sZRwr5X9JviY2a5yehhxnrIlhcgrqdZK4s9YrTDRy2uSDwkaH7yXcjSQeHUHxEtajdk5Emyk+yjqIcyK1I4ljVTBkR4JltK+sMCU99T0Jl1cN0lXtVeyNZWSNlfRr4kqm5kGSaTSuE9JSidzgPFRorQJkhH6Tk1tY1xTY7obmvXK1K6lKQOQuoZ/4LBQ6ZlVg5uHu/wDEOK9Rf5pM8KkaO4+4E9URcDE4o0VRQqqFVRgAaAAd0dE65lSiNVrIe0r1aScTa9AO8zNXe8bn5SEXvGCfU8pa707vJe0gjOyFTxKy9+MajqJSLuGRQNNblgcYDCmoH1AOvrEtU/RqaK6ttHjJ4nZscyScD9pUXN2uSQCJfbE9nPunJrXDVAeiqVyfFixPpNfabFt6fyUlHiRk+p1knxW/bBtHk6l3OiOwP5UY/YS52fuvc1Rnh92O98g/3RrPT8Y5TmtVVFLMcADJJ7hGXCl7Yazzm3s2pcSOQWU4JHInvjrPriIbz3ju/wCZiR5dJGr8+LunFXVdHSvRJrVgtPnrMnfMGySecsL69yp9JTr2jKIVkE2bvoDgeUtNnbCVdSSx8eXpLKxtD3dJZpRzKoRkJLQLyA9JIWiMcpNW3nYthAzCALXMfq/LH3TEYrNgfrI8i7LcZXVm08pXV6vPWT7l5T3TaxJRVsaapkyBtIkrgCSKbnPTl1kK/ucSsrslTIAEcpvrIzXHfLjYewbm6P8AM0iw6ueyg/tHnLSmyb6GBVElbL2dXuagShTZte040VfNuU3+w/ZkoIa6fj6+7TIX+03M/Seh2lqlNAiIqKNAqgAfpKTxv5J1X0ZXdjcalb4aqRVqDXJHZXyXr5mbARYkqpSEb0IoiRRNMEJhMf7QN5ntaYSgM1nBKnGQqg4J85ltnbauaq9t6w01zpn6CSvkU9DqWz1Gte00+Z1XzYTyzfv2i17a+RLd0ejwqzjhBJPEQwDHloI98KPmZm175iNu2wfadFMcQYKMd+eOZHL5PAc4ep3ntAptQ95boWyhYM2gB4SRp1wZkdgbyXV/QZrhwQr8PCihARwg64585n9lo1nWq2tf5Xps9Jjy7Sk8/HHqJ1uXcmlsu5qDmjMR58CY/UxqTqTZxPs2xuKSdlnRT0UsoPoTGajsThQTnQAak55YxzmZ3Z3VpXFstWurPUrFiDxkHmQMAdZo/ZEGS5urap2mtmwjE54QWZWA9AZD/On8jvlIe09kXCKWag6rzLHHCB466Q2bZ014WquqBhleJgOIcsrk6zfe0cZ2Td/8s/owmK3K3BtLvZdOpWDNVqK+HLt2MMwUKucADHLxlVwIR2y9W1RU4xogHFx/hx355Yj1O2JTiQcSH8S4K6c9Rp0Mxe71/UbYe07aoxb4YMiE9F5Y8sqfWbX2Y/8AA6X9Wt/5Hm/iRnkyIldHXipkOBplCGGeeCRItfaKIeFnRW/KWAb0MzO4O1ntdgX1ZPnWpwqe5nSmob6cWfpKrZlbYptCLtqzXbhmapwueFzquNcEcumsPxL7N8jXXG1AGwCIztS/T3VQJUUuEcjhYcQIUmZmneo279R2RWrU660Fq47YRgHHa5nTiGs6/wDjFBbIvhve+74ywYg5K8R05Y6Sb4kmm2PFN+h3dy4Z7VWZizFnySdcAzq6uUJ4eNc92RmUlretT2XldGLsoPdxNKbit/d6l/eYJ4tfmmvhTbY3n0a58AADUkDAxnU8sYk6y3Bu65L1ALemBkvVOuO8KDn1xNF7H9jpUtluqnadWdEBGihcdoeOvOTvbFb13taXu1d6S1M11TOSmBjONcc/WNPFnslV6O7tbl7MRtHS5qD87q+COoQHAm6yiL+FFUeCqB9hPGbW02PcVKHwFdrK4RgQHV8sfyks2CdOh1j3tU2wpv7e1uHdbZFV63ADli3F0B1+X/ulUkhGz1y2v6VQn3dRHxz4GVseeDB72krcDVEDY4uEuoYKOuM5x4zwLaG1dn0bm2rbJ96jq4FRW4+FkOPzE56gy/3t2Wl1vJSoOWVKlJOLhPCSoR2K5HQ4xNMPYbW6SovEjK65I4lYMMjnqI9Kvd/YVGzoijQBVAzNhmLHLc9TLSABFESKIAUu8WyDXQFMCovylhkEHmp7pja9tUV+Fxwkfm5Hy756ZKbbewEuCrMzKyZ4WUjrjmp0PKQ5eLy7Q81hivdjOclj4gcP0Ey+1tnVG2pb1VRvdrwcTjkMFs/cT0l916hGBUXTTOGz6ZkZNyqnvOI3On5Qmn17UlE3PwM6T9mO3x2QtxR7P9JTyyHv71J8Y37Pd269Sxr0HQoKjsCWGAAUUAjvwRPQaW6K8WXqFh3BeH9cnSaWhRVFCqoVRyAluNVmMWmt6PJdgrtXZtNrdLAXGC3BWR8DBOQD4Zycac5pfZvuzWthWuLnHxFw3Eyg5CqCSAcaZyxM3MBLCma9o/8Awm7/AOWfuJgN0Ns7Uo7Mppb2QrIyuadVWHZy7fMneDmen7z7LNzZ1rdWCmqvCGIyBqDnHXlGd0Nimzs6duzBzTDdoAgHiYtyPnAwye625FVNlXVGscV7sMzDI7DEdgE9+dT5yr3br7XtrT4JbDJXjVarOAgDFmJPfz0nrcDADyjcLdCs2ybu0uabUmrPleMajCJwsMcwGWGxLra9jRFqdnC493ladVXUDh/DnTUeeDPVsTowNMHtLd+6vdkvSulpJcseNBT0UFTlA3TOMgzzb4i++HNBrfDBCnvC2hUDGg6nAxPetovw0nPLCt9p5nVzgfSc/NyeLzNLcM6Yy02SzbP9y44H4mIDdDxZErVNwgVDQDMpVQ2RwnXTPfNlcHhz9ZVVWy3lFjmbZS4WHtO7SVxaoLlaa1cdoUxhfD64lNv1bbQxTq2DnNM5ejlQKi5B5nrpjmOc02zyTSQnnwr/AIRJE6U9Rynj28mzb3ab0E/k74YowZ67FM4xggEakdQNeUu9+t2Lk3Fve2Sh61BQrIxHbVeRAOhOpB856NCaYed2e1trV6tNRs9LZAymo9UhwUHzKq4BBPTEb2jsa4O8tC5FJjQVOFqmnCD7uoNT5sJ6RiEAFiQhAAiiJFEACJFiQNCEIQMCEIQAIQhAAEIQgAQhCABCE5qMACScAamY3gFVvK59wVXmxA+nMzAVkbxl9tfahqvgHhC6AdD4yDnQ5bM4OavKjr4liM3cUz1kbd+zFW+pU2HZZsnyUcR+0stpDDS19nlqHu3qEfIpx5scfsYcS2jeR/qelqMDA6RYsSegjjCEIQAIQhAAhCEACKIkIALEhCBoQhCBgQhCABCEIAEIQgAQhCABIO2f/wA9T+oYsItejV7PPF/16Tt/lH0hCedfs7OP0Vm0ppvZ389XyX7mEJXg/oXl/k3UIQnccgQhCABCEIAEIQgAQhCAH//Z")
                 right top
                 no-repeat
               `,
@@ -96,13 +96,13 @@
         <%# Seccion de comida por semana %>
         <section>
             <div class="options">
-               <div class="option active" style="--optionBackground:url(/images/semanas.jpg);">
+               <div class="option active " style="--optionBackground:url(/images/lunes.jpg);">
                    <div class="shadow"></div>
                    <div class="label">
                       <div class="icon">
                          <i>L</i>
                       </div>
-                      <div class="info">
+                      <div class="info ">
                         <div class="main">Lunes</div>
                          <div class="sub" style="white-space: pre-line">
                          <%= @dias[4] %>
@@ -110,13 +110,13 @@
                       </div>
                    </div>
                 </div>
-                <div class="option" style="--optionBackground:url(/images/semanas.jpg);">
+                <div class="option " style="--optionBackground:url(/images/martes.jpg);">
                    <div class="shadow"></div>
                    <div class="label">
                       <div class="icon">
                          <i>M</i>
                       </div>
-                      <div class="info">
+                      <div class="info ">
                          <div class="main">Martes</div>
                           <div class="sub" style="white-space: pre-line">
                            <%= @dias[3] %>
@@ -124,7 +124,7 @@
                       </div>
                    </div>
                 </div>
-                <div class="option" style="--optionBackground:url(/images/semanas.jpg);">
+                <div class="option" style="--optionBackground:url(/images/miercoles.jpg);">
                    <div class="shadow"></div>
                    <div class="label">
                       <div class="icon">
@@ -138,7 +138,7 @@
                       </div>
                    </div>
                 </div>
-                <div class="option" style="--optionBackground:url(/images/semanas.jpg);">
+                <div class="option " style="--optionBackground:url(/images/jueves.jpg);">
                    <div class="shadow"></div>
                    <div class="label">
                       <div class="icon">
@@ -152,7 +152,7 @@
                       </div>
                    </div>
                 </div>
-                <div class="option" style="--optionBackground:url(/images/semanas.jpg);">
+                <div class="option" style="--optionBackground:url(/images/viernes.jpg);">
                    <div class="shadow"></div>
                    <div class="label">
                       <div class="icon">

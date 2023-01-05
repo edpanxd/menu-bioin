@@ -22,6 +22,8 @@
   font-style: normal;
 }
 
+
+
 html,
 body {
     margin: 0;
@@ -51,4 +53,9 @@ body {
 
 .bg-color {
     background-color: rgb(34, 79, 128);
+}
+
+.fyb {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
