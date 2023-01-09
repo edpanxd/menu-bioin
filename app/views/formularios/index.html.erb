@@ -4,15 +4,15 @@
     <% @platillos.each do |comida| %>
       <%# Encabezado de comida %>
         <%# <header style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images5/Free-Download-4K-Food-HD-Wallpaper-Computer.jpg');"> %>
-        <header style="background-image: url('/images/reyes.jpg'); font-family: 'Bree Serif', serif; text-transform: uppercase;  color: ;">
+        <header style="background-image: url('/images/comida.jpg'); font-family: 'Bree Serif', serif; text-transform: uppercase;  color: ;">
             <div class="upper-header">
                 <div class="mini-title">Menu del dia</div>
             </div>
             <div class="lower-header">
               <p class="subtitle" style="white-space: pre-line"><%= comida.comida %></p>
-              <audio autoplay id="bgAudio">
+              <%# <audio autoplay id="bgAudio">
                <source src='/Audio/tambor.mp3' type="audio/mpeg">
-              </audio>
+              </audio> %>
             </div>
         </header>
         <%# Encabezado de comida %>
