@@ -3,7 +3,6 @@
     <article>
     <% @platillos.each do |comida| %>
       <%# Encabezado de comida %>
-        <%# <header style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images5/Free-Download-4K-Food-HD-Wallpaper-Computer.jpg');"> %>
         <header style="background-image: url('/images/comida.jpg'); font-family: 'Bree Serif', serif; text-transform: uppercase;  color: ;">
             <div class="upper-header">
                 <div class="mini-title">Menu del dia</div>
@@ -96,7 +95,7 @@
         <%# Seccion de comida por semana %>
         <section>
             <div class="options">
-               <div class="option active " style="--optionBackground:url(/images/lunes.jpg);">
+               <div class="option active " >
                    <div class="shadow"></div>
                    <div class="label">
                       <div class="icon">
@@ -110,7 +109,7 @@
                       </div>
                    </div>
                 </div>
-                <div class="option " style="--optionBackground:url(/images/martes.jpg);">
+                <div class="option " >
                    <div class="shadow"></div>
                    <div class="label">
                       <div class="icon">
@@ -124,7 +123,7 @@
                       </div>
                    </div>
                 </div>
-                <div class="option" style="--optionBackground:url(/images/miercoles.jpg);">
+                <div class="option" >
                    <div class="shadow"></div>
                    <div class="label">
                       <div class="icon">
@@ -138,7 +137,7 @@
                       </div>
                    </div>
                 </div>
-                <div class="option " style="--optionBackground:url(/images/jueves.jpg);">
+                <div class="option " >
                    <div class="shadow"></div>
                    <div class="label">
                       <div class="icon">
@@ -152,7 +151,7 @@
                       </div>
                    </div>
                 </div>
-                <div class="option" style="--optionBackground:url(/images/viernes.jpg);">
+                <div class="option" >
                    <div class="shadow"></div>
                    <div class="label">
                       <div class="icon">
@@ -271,8 +270,9 @@
 <%end %>
 <%# video navideño %>
 
-<%# Volumen de Audio %>
+<%# Volumen de Audio
 <script>
   var audio = document.getElementById("bgAudio");
   audio.volume = 0.2;
 </script>
+ %>
