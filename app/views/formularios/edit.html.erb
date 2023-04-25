@@ -12,7 +12,7 @@
 <%= error %>
 <%end %>
         <%=form.label  :platillo, class: "form-label text-light"%>
-        <%= form.select :platillo, [['Normal', 'Normal'],['Pechuga asada', 'Pechuga asada'], ['Enchiladas', 'Enchiladas'],['Enchiladas Sin Crema', 'Enchiladas Sin Crema'], ['Enchiladas Sin Lechuga', 'Enchiladas Sin Lechuga']], {}, {class: "form-select"} %>
+        <%= form.select :platillo, [['Normal', 'Normal'],['Pechuga', 'Pechuga'], ['Ensalada', 'Ensalada'],['Enchiladas Sin Crema', 'Enchiladas Sin Crema'], ['Enchiladas Sin Lechuga', 'Enchiladas Sin Lechuga']], {}, {class: "form-select"} %>
         <%=form.label :nombre, class: "form-label text-light"%>
         <%= form.text_field :nombre, class: "form-control", :readonly => true%>
         <%=form.label :fecha, class: "form-label text-light"%>
