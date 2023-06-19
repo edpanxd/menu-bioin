@@ -1,7 +1,7 @@
 class Formulario < ApplicationRecord
 
 
-  validates :platillo, presence: true
+  validates :platillo, presence: false
   validates :nombre, presence: true
   validates :fecha, presence: true
 
