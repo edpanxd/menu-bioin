@@ -1,0 +1,277 @@
+<div class="body" style="">
+    <!-- partial:index.partial.html -->
+    <article>
+    <% @platillos.each do |comida| %>
+      <%# Encabezado de comida %>
+        <header style="background-image: url('/images/baner a.jpg'); font-family: 'Bree Serif', serif; text-transform: uppercase;  color: ;">
+            <div class="upper-header">
+                <div class="mini-title">Menu del dia</div>
+            </div>
+            <div class="lower-header">
+              <p class="subtitle" style="white-space: pre-line"><%= comida.comida %></p>
+              <%# <audio autoplay id="bgAudio">
+               <source src='/Audio/tambor.mp3' type="audio/mpeg">
+              </audio> %>
+            </div>
+        </header>
+        <%# Encabezado de comida %>
+        <%# Seccion de repartidores %>
+        <section>
+          <div class="row">
+            <div class="card mx-auto mt-4 shadow-lg bg-black text-light opacity-75 col-md-5 col-sm-12">
+                <div class="card-body">
+                  <div >
+                    <h5 class="card-title text-center"><%= comida.repartidor_1 %> - <%= @area1 %></h5>
+                  </div>
+                </div>
+            </div>
+            <div class="card mx-auto mt-4 shadow-lg bg-black text-light opacity-75 col-md-5 col-sm-12" >
+                <div class="card-body">
+                  <div>
+                    <h5 class="card-title text-center"><%= comida.repartidor_2 %> - <%= @area2 %></h5>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </section>
+         <%# Seccion de repartidores %>
+        <% end %>
+       <%#  Seccion de platillos %>
+        <section>
+          <%if Time.now < Time.parse("09:30") %>
+          <div class="row mt-4">
+            <div class="col-md-4">
+              <h3 class="text-light text d-flex justify-content-center">Normal</h3>
+              <a type="button" id="lol" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-comida="Normal" class="mx-auto d-flex justify-content-center m-2 img-fluid ">
+              <img src="/images/normal.jpg" class="cicle" alt=""></a>
+            </div>
+             <div class="col-md-4">
+              <h3 class="text-light text d-flex justify-content-center">Ensalada</h3>
+              <a type="button" id="lol1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-comida="Ensalada" class="mx-auto d-flex justify-content-center m-2 img-fluid">
+              <img src="/images/ensalada.jpg" class="cicle" alt=""></a>
+            </div>
+            <div class="col-md-4">
+              <h3 class="text-light text d-flex justify-content-center">Pechuga</h3>
+              <a type="button" id="lol2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-comida="Pechuga" class="mx-auto d-flex justify-content-center m-2 img-fluid">
+              <img src="/images/pechuga.jpg" class="cicle" alt=""></a>
+            </div>
+           <%# <div class="col-md-4">
+              <h3 class="text-light text d-flex justify-content-center">Enchiladas Sin Crema</h3>
+              <a type="button" id="lol3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-comida="Enchiladas Sin Crema" class="mx-auto d-flex justify-content-center m-2 img-fluid">
+              <img src="/images/sin crema.jpg" class="cicle" alt="" ></a>
+            </div>
+            <div class="col-md-4">
+              <h3 class="text-light text d-flex justify-content-center">Enchiladas Sin Lechuga</h3>
+              <a type="button" id="lol4" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-comida="Enchiladas Sin Lechuga" class="mx-auto d-flex justify-content-center m-2 img-fluid">
+              <img src="/images/sin lechuga.jpg" class="cicle" alt=""></a>
+            </div> %>
+            <div class="col-md-4">
+              <h3 class="text-light text d-flex justify-content-center">Cancelar comida</h3>
+              <a type="button" id="lol5" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-comida="Cancelar" class="mx-auto d-flex justify-content-center m-2 img-fluid">
+              <img src="/images/cancelar.jpg" class="cicle" alt="" ></a>
+            </div>
+             </div>
+            <% else %>
+            <script>
+              Swal.fire({
+              title: 'El horario para pedir comida a finalizado.',
+              width: 600,
+              padding: '3em',
+              color: '#ffffff',
+              background: '#fff url(/images/fondo.jpg)',
+              backdrop: `
+                rgb(65, 65, 66, 0.8)
+                url("data:image/jpeg;base64,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")
+                right top
+                no-repeat
+              `,
+               confirmButtonText: 'Vuelva Mañana',
+              })
+            </script>
+            <% end %>
+        </section>
+        <%#  Seccion de platillos %>
+        <%# Seccion de comida por semana %>
+        <section>
+            <div class="options">
+               <div class="option active " >
+                   <div class="shadow"></div>
+                   <div class="label">
+                      <div class="icon">
+                         <i>L</i>
+                      </div>
+                      <div class="info ">
+                        <div class="main">Lunes</div>
+                         <div class="sub" style="white-space: pre-line">
+                         <%= @dias[4] %>
+                          </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="option " >
+                   <div class="shadow"></div>
+                   <div class="label">
+                      <div class="icon">
+                         <i>M</i>
+                      </div>
+                      <div class="info ">
+                         <div class="main">Martes</div>
+                          <div class="sub" style="white-space: pre-line">
+                           <%= @dias[3] %>
+                          </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="option" >
+                   <div class="shadow"></div>
+                   <div class="label">
+                      <div class="icon">
+                         <i>M</i>
+                      </div>
+                      <div class="info">
+                         <div class="main">Miercoles</div>
+                          <div class="sub" style="white-space: pre-line">
+                         <%= @dias[2] %>
+                          </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="option " >
+                   <div class="shadow"></div>
+                   <div class="label">
+                      <div class="icon">
+                         <i>J</i>
+                      </div>
+                      <div class="info">
+                         <div class="main">Jueves</div>
+                          <div class="sub" style="white-space: pre-line">
+                         <%= @dias[1] %>
+                          </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="option" >
+                   <div class="shadow"></div>
+                   <div class="label">
+                      <div class="icon">
+                         <i>V</i>
+                      </div>
+                      <div class="info">
+                         <div class="main">Viernes</div>
+                          <div class="sub" style="white-space: pre-line">
+                         <%= @dias[0] %>
+                          </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+        </section>
+        <%# Seccion de comida por semana %>
+        <%# seccion de lista de pedidos %>
+        <section>
+          <div class="d-grid gap-2">
+          <button class="btn btn-dark m-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Lista</button>
+          </div>
+          <div class="offcanvas offcanvas-start bg-black" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Lista de pedidos</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+            <input class="form-control mb-2" type="text" id="filtersearch3" value="" placeholder="Buscar Nombre"/>
+            <% @lista.each do |l| %>
+              <p class="lista"><%= l.nombre %></p>
+            <% end %>
+            </div>
+          </div>
+        </section>
+        <%# seccion de lista de pedidos %>
+        <footer>
+        <p class="text-center opacity-50">
+        Copyright
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-c-circle m-1" viewBox="0 0 16 16">
+          <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z"/>
+        </svg>
+        Biodiversidad Industrial SA de CV 2022</p>
+        <p class="text-center opacity-50">Created by: Eduardo R. Aguirre Iniesta</p>
+
+        </footer>
+    </article>
+    <script>
+      $(".option").click(function() {
+      $(".option").removeClass("active");
+      $(this).addClass("active");
+      });
+    </script>
+
+</div>
+
+<!-- Modal del formulario -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Registrar Platillo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= form_with model: @formulario do |form|%>
+        <%=form.label  :platillo, class: "form-label" %>
+        <%=form.text_field :platillo, class: "form-control", id: "platillo", :readonly => true %>
+        <!--  <%= form.select :platillo, [['Normal', 'Normal'], ['Enchiladas', 'Enchiladas'],['Pechuga', 'Pechuga']], {}, {class: "form-select"} %> -->
+        <%=form.label :nombre, class: "form-label" %>
+        <%= form.select :nombre, options_for_select(@empleados.collect{ |u| [u.nombre, u.nombre] }), {}, {class: "form-control", id:"e1"} %>
+        <%=form.label :fecha, class: "form-label" %>
+        <%=form.date_field  :fecha, class: "form-control ", :readonly => true, value: Date.today %>
+        <%= form.submit :"Registrar", class: "btn btn-success mt-4" %>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal del formulario -->
+
+<% if notice == "new" %>
+  <script>
+  Swal.fire({
+  icon: 'success',
+  title: 'Pedido Realizado',
+  showConfirmButton: false,
+  timer: 1500
+  })
+  </script>
+<%end %>
+
+<% if alert == "error" %>
+  <script>
+  Swal.fire({
+  icon: 'warning',
+  title: '¡Advertencia! Verifique que su nombre se encuentre registrado en la lista',
+  text: 'En caso de que su nombre no este, vuelva a registrarse o avise a factor humano.',
+
+  timer: 6200,
+  confirmButtonText:
+    ' <button class="btn m-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Lista</button>',
+  confirmButtonAriaLabel:'Lista'
+  })
+  </script>
+<%end %>
+
+<% if alert == "time" %>
+  <script>
+  Swal.fire({
+  icon: 'error',
+  title: 'El tiempo de solicitud de comida a terminado',
+  showConfirmButton: false,
+  timer: 1500
+  })
+  </script>
+<%end %>
+<%# video navideño %>
+
+<%# Volumen de Audio
+<script>
+  var audio = document.getElementById("bgAudio");
+  audio.volume = 0.2;
+</script>
+ %>

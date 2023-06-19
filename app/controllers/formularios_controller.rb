@@ -1,22 +1,15 @@
 class FormulariosController < ApplicationController
 
   def index
-    @platillos = Platillo.where(fecha: Date.today)
     @formulario = Formulario.new
     @empleados = Empleado.all
-    @a = Time.now
-    @platillos.each do |f|
-      @empleados.each do |h|
-        f.repartidor_1 == h.nombre ? @area1=h.area :
-        f.repartidor_2 == h.nombre ? @area2 =h.area : next
-      end
-    end
-    @lista = Formulario.where(fecha: Date.today).order(nombre: 'ASC')
-    @semana = Platillo.all.order(id: :desc)
-    @dias = []
-    @semana.each_with_index do |dia, index|
-      index <= 4 ? @dias.push(dia.comida+"\r\n \r\n#{dia.repartidor_1}"+"\r\n#{dia.repartidor_2}") : next
-    end
+    @hoy =Date.today
+    @lunes = Platillo.where(fecha: Date.today.next_week(:monday))
+    @martes = Platillo.where(fecha: Date.today.next_week(:tuesday))
+    @miercoles = Platillo.where(fecha: Date.today.next_week(:wednesday))
+    @jueves = Platillo.where(fecha: Date.today.next_week(:thursday))
+    @viernes = Platillo.where(fecha: Date.today.next_week(:friday))
+
   end
 
   def new
@@ -25,16 +18,14 @@ class FormulariosController < ApplicationController
   end
 
   def create
-    if Time.now < Time.parse("09:30")
+
       @formulario = Formulario.new(formulario_params)
       if @formulario.save
         redirect_to formularios_path, notice: 'new'
       else
         redirect_to formularios_path, alert: 'error'
       end
-    else
-      redirect_to formularios_path, alert: 'time'
-    end
+
   end
 
   def edit
@@ -60,6 +51,8 @@ class FormulariosController < ApplicationController
   end
 
   def lista
+    @formularios = Formulario.all
+    @formularioss = Formulario.where(fecha: Date.today).where.not("nombre LIKE 'PL2%'").order(nombre: 'ASC')
     @formularios = Formulario.where(fecha: Date.today).where.not("nombre LIKE 'PL2%'").order(nombre: 'ASC')
     @formularios2 = Formulario.where(fecha: Date.today).where("nombre LIKE 'PL2%'").order(nombre: 'ASC')
     @enchiladas = Formulario.where(fecha: Date.today, platillo: 'Ensalada').count
@@ -94,6 +87,6 @@ class FormulariosController < ApplicationController
   private
 
   def formulario_params
-    params.require(:formulario).permit(:platillo, :nombre, :fecha)
+    params.require(:formulario).permit(:platillo, :nombre, :fecha, :entrada, :guisado, :guarnicion)
   end
 end
