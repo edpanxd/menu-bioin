@@ -79,8 +79,6 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
-    data-confirm-modal (1.6.3)
-      railties (>= 3.0)
     erubi (1.10.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -104,10 +102,10 @@ GEM
     mini_mime (1.1.2)
     minitest (5.15.0)
     msgpack (1.5.1)
+    mysql2 (0.5.4)
     nio4r (2.5.8)
     nokogiri (1.13.4-x86_64-linux)
       racc (~> 1.4)
-    pg (1.3.5)
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
@@ -214,10 +212,9 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
-  data-confirm-modal
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  pg (~> 1.1)
+  mysql2
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.5)
@@ -237,4 +234,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.2.32
+   2.3.16
