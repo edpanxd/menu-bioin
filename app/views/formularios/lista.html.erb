@@ -11,33 +11,34 @@
       <div class="col-lg-2 mx-auto">
         <div class="card   mb-3" >
           <div class="card-header">
-            <h4>Lunes</h4>
-            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'lunes' ), target: :_blank%>
+            <h2>Lunes</h2>
+            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'lunes' ), target: :_blank, class: "m-3", class: "m-3"%>
+            <%= link_to 'Pdf', lista_path(format: :pdf, :dia => 'lunes' ), target: :_blank, class: "m-3" , class: "m-3"%>
           </div>
             <div class="card-body">
               <div class="">
-                <h5 style="color: #686868"><b>Entrada 1 </b></h5>
+                <h6 style="color: #686868"><b>Entrada 1 </b></h6>
                 <p class="card-text"> <b>Total: : <%= @entradaL1 %></b> </p>
                 <hr style="color:black">
-                <h5 style="color: #686868"><b>Entrada 2</b></h5>
+                <h6 style="color: #686868"><b>Entrada 2</b></h6>
                 <h6 class="card-text"><b>Total:</b> <%= @entradaL2 %></h6>
                 <hr>
-                <h5 style="color: #686868"><b>Guisado 1</b></h5>
+                <h6 style="color: #686868"><b>Guisado 1</b></h6>
                 <p class="card-text"><b>Total:</b> <%= @guisadoL1 %></p>
                 <hr>
-                <h5 style="color: #686868"><b>Guisado 2</b></h5>
+                <h6 style="color: #686868"><b>Guisado 2</b></h6>
                 <p class="card-text"><b>Total:</b> <%= @guisadoL2 %></p>
                 <hr>
-                <h5 style="color: #686868"><b>Guisado 3</b></h5>
+                <h6 style="color: #686868"><b>Guisado 3</b></h6>
                 <p class="card-text"><b>Total:</b> <%= @guisadoL3 %></p>
                 <hr>
-                <h5 style="color: #686868"><b>Guarnicion 1</b></h5>
+                <h6 style="color: #686868"><b>Guarnicion 1</b></h6>
                 <p class="card-text"><b>Total:</b> <%= @guarnicionL1 %></p>
                 <hr>
-                <h5 style="color: #686868"><b>Guarnicion 2</b></h5>
+                <h6 style="color: #686868"><b>Guarnicion 2</b></h6>
                 <p class="card-text"><b>Total:</b> <%= @guarnicionL2 %></p>
                 <hr>
-                <h5 style="color: #686868"><b>Guarnicion 3</b></h5>
+                <h6 style="color: #686868"><b>Guarnicion 3</b></h6>
                 <p class="card-text"><b>Total:</b> <%= @guarnicionL3 %></p>
               </div>
               <!--
@@ -75,128 +76,132 @@
       </div>
       <div class="col-lg-2 mx-auto">
         <div class="card mb-3" style="backgroud-color = #666363db" >
-          <div class="card-header"><h4>Martes</h4>
-            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'martes' ), target: :_blank%>
+          <div class="card-header"><h2>Martes</h2>
+            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'martes' ), target: :_blank, class: "m-3"%>
+            <%= link_to 'PDF', lista_path(format: :pdf, :dia => 'martes' ), target: :_blank, class: "m-3"%>
           </div>
           <div class="card-body">
-            <h5 style="color: #686868"><b>Entrada 1</b></h5>
+            <h6 style="color: #686868"><b>Entrada 1</b></h6>
             <p class="card-text"> <b>Total:</b> <%= @entradaM1 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Entrada 2</b></h5>
+            <h6 style="color: #686868"><b>Entrada 2</b></h6>
             <h6 class="card-text"><b>Total:</b> <%= @entradaM2 %></h6>
             <hr>
-            <h5 style="color: #686868"><b>Guisado 1</b></h5>
+            <h6 style="color: #686868"><b>Guisado 1</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guisadoM1 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guisado 2</b></h5>
+            <h6 style="color: #686868"><b>Guisado 2</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guisadoM2 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guisado 3</b></h5>
+            <h6 style="color: #686868"><b>Guisado 3</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guisadoM3 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guarnicion 1</b></h5>
+            <h6 style="color: #686868"><b>Guarnicion 1</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guarnicionM1 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guarnicion 2</b></h5>
+            <h6 style="color: #686868"><b>Guarnicion 2</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guarnicionM2 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guarnicion 3</b></h5>
+            <h6 style="color: #686868"><b>Guarnicion 3</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guarnicionM3 %></p>
           </div>
         </div>
       </div>
       <div class="col-lg-2 mx-auto">
         <div class="card mb-3" >
-          <div class="card-header"><h4>Miercoles</h4>
-            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'miercoles' ), target: :_blank%>
+          <div class="card-header"><h2>Miercoles</h2>
+            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'miercoles' ), target: :_blank, class: "m-3"%>
+            <%= link_to 'Pdf', lista_path(format: :pdf, :dia => 'miercoles' ), target: :_blank, class: "m-3"%>
           </div>
           <div class="card-body">
-            <h5 style="color: #686868"><b>Entrada 1</b></h5>
+            <h6 style="color: #686868"><b>Entrada 1</b></h6>
             <p class="card-text"> <b>Total:</b> <%= @entradaW1 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Entrada 2</b></h5>
+            <h6 style="color: #686868"><b>Entrada 2</b></h6>
             <h6 class="card-text"><b>Total:</b> <%= @entradaW2 %></h6>
             <hr>
-            <h5 style="color: #686868"><b>Guisado 1</b></h5>
+            <h6 style="color: #686868"><b>Guisado 1</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guisadoW1 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guisado 2</b></h5>
+            <h6 style="color: #686868"><b>Guisado 2</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guisadoW2 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guisado 3</b></h5>
+            <h6 style="color: #686868"><b>Guisado 3</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guisadoW3 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guarnicion 1</b></h5>
+            <h6 style="color: #686868"><b>Guarnicion 1</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guarnicionW1 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guarnicion 2</b></h5>
+            <h6 style="color: #686868"><b>Guarnicion 2</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guarnicionW2 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guarnicion 3</b></h5>
+            <h6 style="color: #686868"><b>Guarnicion 3</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guarnicionW3 %></p>
           </div>
         </div>
       </div>
       <div class="col-lg-2 mx-auto">
         <div class="card mb-3" >
-          <div class="card-header"><h4>Jueves</h4>
-            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'jueves' ), target: :_blank%>
+          <div class="card-header"><h2>Jueves</h2>
+            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'jueves' ), target: :_blank, class: "m-3"%>
+            <%= link_to 'Pdf', lista_path(format: :pdf, :dia => 'jueves' ), target: :_blank, class: "m-3"%>
           </div>
           <div class="card-body">
-            <h5 style="color: #686868"><b>Entrada 1</b></h5>
+            <h6 style="color: #686868"><b>Entrada 1</b></h6>
             <p class="card-text"> <b>Total:</b> <%= @entradaJ1 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Entrada 2</b></h5>
+            <h6 style="color: #686868"><b>Entrada 2</b></h6>
             <h6 class="card-text"><b>Total:</b> <%= @entradaJ2 %></h6>
             <hr>
-            <h5 style="color: #686868"><b>Guisado 1</b></h5>
+            <h6 style="color: #686868"><b>Guisado 1</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guisadoJ1 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guisado 2</b></h5>
+            <h6 style="color: #686868"><b>Guisado 2</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guisadoJ2 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guisado 3</b></h5>
+            <h6 style="color: #686868"><b>Guisado 3</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guisadoJ3 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guarnicion 1</b></h5>
+            <h6 style="color: #686868"><b>Guarnicion 1</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guarnicionJ1 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guarnicion 2</b></h5>
+            <h6 style="color: #686868"><b>Guarnicion 2</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guarnicionJ2 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guarnicion 3</b></h5>
+            <h6 style="color: #686868"><b>Guarnicion 3</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guarnicionJ3 %></p>
           </div>
         </div>
       </div>
       <div class="col-lg-2 mx-auto">
         <div class="card mb-3" >
-          <div class="card-header"><h4>Viernes</h4>
-            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'viernes' ), target: :_blank%>
+          <div class="card-header"><h2>Viernes</h2>
+            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'viernes' ), target: :_blank, class: "m-3"%>
+            <%= link_to 'Pdf', lista_path(format: :pdf, :dia => 'viernes' ), target: :_blank, class: "m-3"%>
           </div>
           <div class="card-body">
-            <h5 style="color: #686868"><b>Entrada 1</b></h5>
+            <h6 style="color: #686868"><b>Entrada 1</b></h6>
             <p class="card-text"> <b>Total:</b> <%= @entradaV1 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Entrada 2</b></h5>
+            <h6 style="color: #686868"><b>Entrada 2</b></h6>
             <h6 class="card-text"><b>Total:</b> <%= @entradaV2 %></h6>
             <hr>
-            <h5 style="color: #686868"><b>Guisado 1</b></h5>
+            <h6 style="color: #686868"><b>Guisado 1</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guisadoV1 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guisado 2</b></h5>
+            <h6 style="color: #686868"><b>Guisado 2</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guisadoV2 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guisado 3</b></h5>
+            <h6 style="color: #686868"><b>Guisado 3</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guisadoV3 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guarnicion 1</b></h5>
+            <h6 style="color: #686868"><b>Guarnicion 1</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guarnicionV1 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guarnicion 2</b></h5>
+            <h6 style="color: #686868"><b>Guarnicion 2</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guarnicionV2 %></p>
             <hr>
-            <h5 style="color: #686868"><b>Guarnicion 3</b></h5>
+            <h6 style="color: #686868"><b>Guarnicion 3</b></h6>
             <p class="card-text"><b>Total:</b> <%= @guarnicionV3 %></p>
           </div>
         </div>
