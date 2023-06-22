@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Post") do |sheet|
+  sheet.add_row ['Nombre', 'Entrada', 'Guisado', 'Guarnición', 'Fecha']
+  @formulario.each do |post|
+    sheet.add_row [post.nombre, post.entrada,post.guisado,post.guarnicion,post.fecha]
+  end
+end

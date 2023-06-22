@@ -14,6 +14,7 @@
     padding: 60px;
     color: #ffff;
     font-family: "Plus Jakarta Sans", sans-serif;
+
 }
 
 .d {
@@ -657,6 +658,8 @@ body {
 .card-m {
   list-style: none;
   position: relative;
+  background-color: white;
+  border-radius: var(--spacing-l);
 }
 
 .card-m:before {
@@ -669,13 +672,15 @@ body {
 .card-m__background {
   background-size: cover;
   background-position: center;
-  border-radius: var(--spacing-l);
+  border-top-left-radius: var(--spacing-l);
+  border-top-right-radius: var(--spacing-l);
   bottom: 0;
   filter: brightness(0.75) saturate(1.2) contrast(0.85);
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
+  height: 18%;
   transform-origin: center;
   trsnsform: scale(1) translateZ(0);
   transition:
@@ -695,6 +700,7 @@ body {
   padding: var(--spacing-l);
   position: absolute;
   top: 0;
+
 }
 
 .card-m__category {
@@ -710,4 +716,21 @@ body {
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   line-height: 1.4;
   word-spacing: 100vw;
+}
+.select2-search {
+  background-color:#323133;
+  color: white;
+}
+.select2-search input {
+  background-color: #323133;
+  color: white;
+}
+.select2-results {
+  background-color: #323133;
+  color: white;
+}
+.select2 {
+
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
 }

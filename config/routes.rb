@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/', to: 'formularios#error'
+  get '/', to: 'formularios#index'
   get '/lista', to: 'formularios#lista'
   resources :platillos
   resources :formularios
