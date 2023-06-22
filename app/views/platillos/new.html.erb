@@ -27,3 +27,14 @@
 </div>
 
 </div>
+<% if alert == "error" %>
+  <script>
+  Swal.fire({
+  icon: 'warning',
+  title: '¡Advertencia!',
+  text: 'Dia repetido',
+
+  timer: 6200
+  })
+  </script>
+<%end %>

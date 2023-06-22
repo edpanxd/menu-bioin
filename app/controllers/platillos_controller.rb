@@ -20,8 +20,9 @@ class PlatillosController < ApplicationController
     if @platillo.save
       redirect_to platillos_path, notice: 'nuevo'
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_platillo_path, alert: 'error'
     end
+
 
   end
 
