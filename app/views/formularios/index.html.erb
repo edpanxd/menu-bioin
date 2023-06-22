@@ -1,96 +1,106 @@
 
 <section class="hero-section">
-  <div class="card-m-grid">
+  <div class="card-m-grid" >
     <% @lunes.each do |menu| %>
     <a class="card-m" href="#" id="lunes" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/1639556/pexels-photo-1639556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
-      <div class="card-m__content">
+
+      <div class="card-m__content" >
         <p class="card-m__category"> <%= menu.fecha %></p>
         <h3 class="card-m__heading">
             Lunes
-
-
         </h3>
-        <div class="sub" style="white-space: pre-line;  color: white">
-           <%= menu.comida %>
+        <div class="sub" style="white-space: pre-line; color:black;">
+           <p style="font-size:15px">  <%= menu.comida %> </p>
         </div>
 
       </div>
+
     </a>
     <% end %>
-    <a class="card-m" href="#">
+    <% @martes.each do |menu| %>
+    <a class="card-m" href="#" id="martes" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/604969/pexels-photo-604969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
       <div class="card-m__content">
-        <% @martes.each do |menu| %>
         <p class="card-m__category"><%= menu.fecha %></p>
         <h3 class="card-m__heading">
             Martes
         </h3>
-        <% end %>
+        <div class="sub" style="white-space: pre-line; color:black;">
+           <p style="font-size:15px">  <%= menu.comida %> </p>
+        </div>
       </div>
     </a>
-    <a class="card-m" href="#">
+    <% end %>
+    <% @miercoles.each do |menu| %>
+    <a class="card-m" href="#" id="miercoles" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/3789885/pexels-photo-3789885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
       <div class="card-m__content">
-        <% @miercoles.each do |menu| %>
         <p class="card-m__category"><%= menu.fecha %></p>
         <h3 class="card-m__heading">
             Miercoles
-
         </h3>
-        <% end %>
+        <div class="sub" style="white-space: pre-line; color:black;">
+           <p style="font-size:15px">  <%= menu.comida %> </p>
+        </div>
       </div>
-    </li>
-    <a class="card-m" href="#">
+    </a>
+    <% end %>
+    <% @jueves.each do |menu| %>
+    <a class="card-m" href="#" id="jueves" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/1988624/pexels-photo-1988624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
       <div class="card-m__content">
-        <% @jueves.each do |menu| %>
         <p class="card-m__category"><%= menu.fecha %></p>
         <h3 class="card-m__heading">
             Jueves
-
         </h3>
-        <% end %>
+        <div class="sub" style="white-space: pre-line; color:black;">
+           <p style="font-size:15px">  <%= menu.comida %> </p>
+        </div>
       </div>
     </a>
-    <a class="card-m" href="#">
+    <% end %>
+    <% @viernes.each do |menu| %>
+    <a class="card-m" href="#" id="viernes" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/3338537/pexels-photo-3338537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
       <div class="card-m__content">
-        <% @viernes.each do |menu| %>
         <p class="card-m__category"><%= menu.fecha %></p>
         <h3 class="card-m__heading">
-
+          Viernes
         </h3>
-        <% end %>
+        <div class="sub" style="white-space: pre-line; color:black;">
+           <p style="font-size:15px">  <%= menu.comida %> </p>
+        </div>
       </div>
     </a>
+    <% end %>
     <a class="card-m" href="#">
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/839428/pexels-photo-839428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
       <div class="card-m__content">
         <p class="card-m__category">Category</p>
         <h3 class="card-m__heading"> </h3>
       </div>
-    </a>
+      </a>
   <div>
 </section>
 <!-- Modal del formulario -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+<div class="modal fade"  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content bg-dark text-white">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Registrar Platillo</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body " >
         <%= form_with model: @formulario do |form|%>
         <%=form.label  :entrada, class: "form-label" %>
-        <%= form.select :entrada, [['Entrada 1', 'Entrada 1'], ['Entrada 2', 'Entrada 2']], {}, {class: "form-select"} %>
+        <%= form.select :entrada, [['Entrada 1', 'Entrada 1'], ['Entrada 2', 'Entrada 2']], {}, {class: "form-select ", id:"entradaL"} %>
         <%=form.label  :guisado, class: "form-label" %>
-        <%= form.select :guisado, [['Guisado 1', 'Guisado 1'], ['Guisado 2', 'Guisado 2'], ['Guisado 3', 'Guisado 3']], {}, {class: "form-select"} %>
+        <%= form.select :guisado, [['Guisado 1', 'Guisado 1'], ['Guisado 2', 'Guisado 2'], ['Guisado 3', 'Guisado 3']], {}, {class: "form-select", id:"guisadoL"} %>
         <%=form.label  :guarnicion, class: "form-label" %>
-        <%= form.select :guarnicion, [['Guarnición 1', 'Guarnición 1'], ['Guarnición 2', 'Guarnición 2'],['Guarnición 3', 'Guarnición 3']], {}, {class: "form-select"} %>
+        <%= form.select :guarnicion, [['Guarnición 1', 'Guarnición 1'], ['Guarnición 2', 'Guarnición 2'],['Guarnición 3', 'Guarnición 3']], {}, {class: "form-select", id:"guarnicionL"} %>
         <%=form.label :nombre, class: "form-label" %>
-        <%= form.select :nombre, options_for_select(@empleados.collect{ |u| [u.nombre, u.nombre] }), {}, {class: "form-control", id:"e1"} %>
+        <%= form.select :nombre, options_for_select(@empleados.collect{ |u| [u.nombre, u.nombre] }), {}, {class: "form-control", id:"nombreL"} %>
         <%=form.label :fecha, class: "form-label" %>
         <%=form.date_field  :fecha, class: "form-control ", :readonly => true,  id: "platillo" %>
         <%= form.submit :"Registrar", class: "btn btn-success mt-4" %>

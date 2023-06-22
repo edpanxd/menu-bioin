@@ -8,10 +8,10 @@
     <div class="row">
       <% @platillos.each do |p| %>
       <div class="col-md-4 card-columns" >
-      <div class="card opacity-75 bg-color text text-light  " style="height: 24rem; border-radius: 10%">
+      <div class="card opacity-75 bg-color text text-light" >
                 <h1 class="text d-flex justify-content-center"><i class="bi bi-egg-fried"></i></h1>
                 <div class="card-body">
-                    <P class="card-title">Comida: <%= p.comida %></P>
+                    <P class="card-title" style="white-space: pre-line;  color: white">Comida: <%= p.comida %></P>
                     <p class="card-text">Repartidores:</p>
                     <p class="card-text"><%= p.repartidor_1 %></p>
                      <p class="card-text"><%= p.repartidor_2 %></p>

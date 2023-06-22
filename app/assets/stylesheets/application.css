@@ -16,8 +16,8 @@
 
  */
 @font-face {
-  font-family: 'christmas';
-  src: url('Candi.ttf') format('truetype');
+  font-family: 'magi';
+  src: url('anti.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -31,12 +31,10 @@ body {
     background-position: top;
     background-size: cover;
     background-repeat: repeat;
-
+    font-family: magi;
 }
 
-.text {
-    font-family: GFS Didot;
-}
+
 
 .cicle {
     border-radius: 50%;

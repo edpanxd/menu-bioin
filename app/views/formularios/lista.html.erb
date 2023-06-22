@@ -1,238 +1,207 @@
 <%= render 'header/linkheader' %>
     <div class="container text">
-
         <%= notice %>
         <div class="d-flex w-100 justify-content-between">
-        <h1 class="text-light">Lista de comida</h1>
-
-            <a href="/formularios/new" class="btn text-white m-3"><h1><i class="bi bi-plus-circle-dotted"></i></h1></a>
-            <a href="/lista.pdf" class="btn text-white m-3" target="_blank"><h1><i class="bi bi-printer-fill"></i></h1></a>
+          <h1 class="text-light">Lista de comida</h1>
+            <a href="/formularios/new" class="btn m-3"><h1><i class="bi bi-plus-circle-dotted"></i></h1></a>
+            <a href="/lista.pdf" class="btn m-3" target="_blank"><h1><i class="bi bi-printer-fill"></i></h1></a>
         </div>
 
-            <div class="row">
-
-                <div class="col-md-4">
-                  <div class="card bg-success text-white" style="border-radius: 10%">
-                    <div class="card-body mx-4">
-                      <div class="container">
-                        <p class="my-5 mx-5" style="font-size: 30px;">Total: <%=@total%></p>
-                        <div class="row">
-
-                          <hr>
-                          <div class="col-xl-10 ">
-                            <p>Normal</p>
-                          </div>
-                          <div class="col-xl-2">
-                            <p class="float-end"><%=@normal%>
-                            </p>
-                          </div>
-                          <hr>
-                        </div>
-                        <div class="row">
-                          <div class="col-xl-10">
-                            <p>Pechuga</p>
-                          </div>
-                          <div class="col-xl-2">
-                            <p class="float-end"><%=@pechuga%>
-                            </p>
-                          </div>
-                          <hr>
-                        </div>
-                        <div class="row">
-                          <div class="col-xl-10">
-                            <p>Ensalada</p>
-                          </div>
-                          <div class="col-xl-2">
-                            <p class="float-end"><%=@enchiladas%>
-                            </p>
-                          </div>
-                          <hr>
-                        </div>
-                        <div class="row">
-                          <div class="col-xl-10">
-                            <p>Comidas canceladas</p>
-                          </div>
-                          <div class="col-xl-2">
-                            <p class="float-end"><%=@cancelada%>
-                            </p>
-                          </div>
-
-                          <hr style="border: 2px solid black;">
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                    <br>
-                    <br>
-                  <div class="card bg-secondary text-white" style="border-radius: 10%">
-                    <div class="card-body mx-4">
-                      <div class="container">
-                        <p class="my-5 mx-5" style="font-size: 20px;">Total PL1: <%=@total_pl1%></p>
-                        <div class="row">
-
-                          <hr>
-                          <div class="col-xl-10 ">
-                            <p>Normal</p>
-                          </div>
-                          <div class="col-xl-2">
-                            <p class="float-end"><%=@normal_pl1%>
-                            </p>
-                          </div>
-                          <hr>
-                        </div>
-                        <div class="row">
-                          <div class="col-xl-10">
-                            <p>Pechuga</p>
-                          </div>
-                          <div class="col-xl-2">
-                            <p class="float-end"><%=@pechuga_pl1%>
-                            </p>
-                          </div>
-                          <hr>
-                        </div>
-                        <div class="row">
-                          <div class="col-xl-10">
-                            <p>Ensalada</p>
-                          </div>
-                          <div class="col-xl-2">
-                            <p class="float-end"> <%=@enchiladas_pl1%>
-                            </p>
-                          </div>
-                          <hr>
-                        </div>
-
-                        <div class="row">
-                          <div class="col-xl-10">
-                            <p>Comidas canceladas</p>
-                          </div>
-                          <div class="col-xl-2">
-                            <p class="float-end"><%=@cancelada_pl1%>
-                            </p>
-                          </div>
-
-                          <hr style="border: 2px solid black;">
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                    <br>
-                    <br>
-                  <div class="card bg-light text-dark" style="border-radius: 10%">
-                    <div class="card-body mx-4">
-                      <div class="container">
-                        <p class="my-5 mx-5" style="font-size: 20px;">Total PL2: <%=@total_pl2%></p>
-                        <div class="row">
-
-                          <hr>
-                          <div class="col-xl-10 ">
-                            <p>Normal</p>
-                          </div>
-                          <div class="col-xl-2">
-                            <p class="float-end"><%=@normal_pl2%>
-                            </p>
-                          </div>
-                          <hr>
-                        </div>
-                        <div class="row">
-                          <div class="col-xl-10">
-                            <p>Pechuga</p>
-                          </div>
-                          <div class="col-xl-2">
-                            <p class="float-end"><%=@pechuga_pl2%>
-                            </p>
-                          </div>
-                          <hr>
-                        </div>
-                        <div class="row">
-                          <div class="col-xl-10">
-                            <p>Ensalada</p>
-                          </div>
-                          <div class="col-xl-2">
-                            <p class="float-end"><%=@enchiladas_pl2%>
-                            </p>
-                          </div>
-                          <hr>
-                        </div>
-
-                        <div class="row">
-                          <div class="col-xl-10">
-                            <p>Comidas canceladas</p>
-                          </div>
-                          <div class="col-xl-2">
-                            <p class="float-end"><%= @cancelada_pl2 %>
-                            </p>
-                          </div>
-
-                          <hr style="border: 2px solid black;">
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="list-group col-md-8">
-
-                      <ul class="nav " id="myTab" role="tablist">
-                        <li class="nav-item m-1" role="presentation">
-                          <button class="btn btn-outline-light active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><h5>Lista PL1</h5></button>
-                        </li>
-                        <li class="nav-item m-1" role="presentation">
-                          <button class="btn btn-outline-light" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><h5>Lista PL2</h5></button>
-                        </li>
-
-                      </ul>
-                      <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <input class="form-control m-1" type="text" id="filtersearch" value="" placeholder="Buscar Empleado PL1"/>
-                        <% @formularios.each do |p| %>
-                        <div class="list-group-item bg-black text-white opacity-75 border border-white ms-1 pl1">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">
-                                    <%= p.nombre %>
-                                </h5>
-                                <small>
-                                    <%= p.fecha %>
-                                </small>
-                            </div>
-                            <p class="mb-1">
-                                <%= p.entrada %>
-                            </p>
-                            <a href="<%= edit_formulario_path(p) %>" class="btn btn-primary"><i
-                                    class="bi bi-pencil-square"></i></a>
-                            <%=link_to "" , formulario_path(p), method: "delete" ,
-                                class: "btn btn-danger bi bi-trash3-fill" %>
-                        </div>
-                        <%end%>
-                        </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <input class="form-control m-1" type="text" id="filtersearch2" value="" placeholder="Buscar Empleado PL2"/>
-                        <% @formularios2.each do |p| %>
-                        <div class="list-group-item bg-black text-white opacity-75 border border-white ms-1 pl2">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">
-                                    <%= p.nombre %>
-                                </h5>
-                                <small>
-                                    <%= p.fecha %>
-                                </small>
-                            </div>
-                            <p class="mb-1">
-                                <%= p.platillo %>
-                            </p>
-                            <a href="<%= edit_formulario_path(p) %>" class="btn btn-primary"><i
-                                    class="bi bi-pencil-square"></i></a>
-                            <%=link_to "" , formulario_path(p), method: "delete" ,
-                                class: "btn btn-danger bi bi-trash3-fill" %>
-                        </div>
-                    <%end%>
-                        </div>
-
-                      </div>
-                </div>
-
+    <section class="row ">
+      <div class="col-lg-2 mx-auto">
+        <div class="card   mb-3" >
+          <div class="card-header">
+            <h4>Lunes</h4>
+            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'lunes' ), target: :_blank%>
+          </div>
+            <div class="card-body">
+              <div class="">
+                <h5 style="color: #686868"><b>Entrada 1 </b></h5>
+                <p class="card-text"> <b>Total: : <%= @entradaL1 %></b> </p>
+                <hr style="color:black">
+                <h5 style="color: #686868"><b>Entrada 2</b></h5>
+                <h6 class="card-text"><b>Total:</b> <%= @entradaL2 %></h6>
+                <hr>
+                <h5 style="color: #686868"><b>Guisado 1</b></h5>
+                <p class="card-text"><b>Total:</b> <%= @guisadoL1 %></p>
+                <hr>
+                <h5 style="color: #686868"><b>Guisado 2</b></h5>
+                <p class="card-text"><b>Total:</b> <%= @guisadoL2 %></p>
+                <hr>
+                <h5 style="color: #686868"><b>Guisado 3</b></h5>
+                <p class="card-text"><b>Total:</b> <%= @guisadoL3 %></p>
+                <hr>
+                <h5 style="color: #686868"><b>Guarnicion 1</b></h5>
+                <p class="card-text"><b>Total:</b> <%= @guarnicionL1 %></p>
+                <hr>
+                <h5 style="color: #686868"><b>Guarnicion 2</b></h5>
+                <p class="card-text"><b>Total:</b> <%= @guarnicionL2 %></p>
+                <hr>
+                <h5 style="color: #686868"><b>Guarnicion 3</b></h5>
+                <p class="card-text"><b>Total:</b> <%= @guarnicionL3 %></p>
+              </div>
+              <!--
+              <div class="col-lg-9">
+                <hr>
+                 <p><b>Combinacinación Entrada 1, Guisado 1, Guarnicion 1</b></p>
+                <%= @c1 %>
+                <hr>
+                 <p><b>Combinacinación Entrada 1, Guisado 2, Guarnicion 1</b></p>
+                <%= @c2 %>
+                <hr>
+                 <p><b>Combinacinación Entrada 1, Guisado 3, Guarnicion 1</b></p>
+                <%= @c3 %>
+                <hr>
+                 <p><b>Combinacinación Entrada 1, Guisado 1, Guarnicion 2</b></p>
+                <%= @c4 %>
+                <hr>
+                 <p><b>Combinacinación Entrada 1, Guisado 2, Guarnicion 2</b></p>
+                <%= @c5 %>
+                <hr>
+                 <p><b>Combinacinación Entrada 1, Guisado 3, Guarnicion 2</b></p>
+                <%= @c6 %>
+                <hr>
+                 <p><b>Combinacinación Entrada 1, Guisado 1, Guarnicion 3</b></p>
+                <%= @c7 %>
+                <hr>
+                 <p><b>Combinacinación Entrada 1, Guisado 2, Guarnicion 3</b></p>
+                <%= @c8 %>
+                <hr>
+                 <p><b>Combinacinación Entrada 1, Guisado 3, Guarnicion 3</b></p>
+              </div>
+              -->
             </div>
+        </div>
+      </div>
+      <div class="col-lg-2 mx-auto">
+        <div class="card mb-3" style="backgroud-color = #666363db" >
+          <div class="card-header"><h4>Martes</h4>
+            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'martes' ), target: :_blank%>
+          </div>
+          <div class="card-body">
+            <h5 style="color: #686868"><b>Entrada 1</b></h5>
+            <p class="card-text"> <b>Total:</b> <%= @entradaM1 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Entrada 2</b></h5>
+            <h6 class="card-text"><b>Total:</b> <%= @entradaM2 %></h6>
+            <hr>
+            <h5 style="color: #686868"><b>Guisado 1</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guisadoM1 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guisado 2</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guisadoM2 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guisado 3</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guisadoM3 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guarnicion 1</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guarnicionM1 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guarnicion 2</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guarnicionM2 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guarnicion 3</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guarnicionM3 %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 mx-auto">
+        <div class="card mb-3" >
+          <div class="card-header"><h4>Miercoles</h4>
+            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'miercoles' ), target: :_blank%>
+          </div>
+          <div class="card-body">
+            <h5 style="color: #686868"><b>Entrada 1</b></h5>
+            <p class="card-text"> <b>Total:</b> <%= @entradaW1 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Entrada 2</b></h5>
+            <h6 class="card-text"><b>Total:</b> <%= @entradaW2 %></h6>
+            <hr>
+            <h5 style="color: #686868"><b>Guisado 1</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guisadoW1 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guisado 2</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guisadoW2 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guisado 3</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guisadoW3 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guarnicion 1</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guarnicionW1 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guarnicion 2</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guarnicionW2 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guarnicion 3</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guarnicionW3 %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 mx-auto">
+        <div class="card mb-3" >
+          <div class="card-header"><h4>Jueves</h4>
+            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'jueves' ), target: :_blank%>
+          </div>
+          <div class="card-body">
+            <h5 style="color: #686868"><b>Entrada 1</b></h5>
+            <p class="card-text"> <b>Total:</b> <%= @entradaJ1 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Entrada 2</b></h5>
+            <h6 class="card-text"><b>Total:</b> <%= @entradaJ2 %></h6>
+            <hr>
+            <h5 style="color: #686868"><b>Guisado 1</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guisadoJ1 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guisado 2</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guisadoJ2 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guisado 3</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guisadoJ3 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guarnicion 1</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guarnicionJ1 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guarnicion 2</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guarnicionJ2 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guarnicion 3</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guarnicionJ3 %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 mx-auto">
+        <div class="card mb-3" >
+          <div class="card-header"><h4>Viernes</h4>
+            <%= link_to 'Excel', lista_path(format: :xlsx, :dia => 'viernes' ), target: :_blank%>
+          </div>
+          <div class="card-body">
+            <h5 style="color: #686868"><b>Entrada 1</b></h5>
+            <p class="card-text"> <b>Total:</b> <%= @entradaV1 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Entrada 2</b></h5>
+            <h6 class="card-text"><b>Total:</b> <%= @entradaV2 %></h6>
+            <hr>
+            <h5 style="color: #686868"><b>Guisado 1</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guisadoV1 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guisado 2</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guisadoV2 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guisado 3</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guisadoV3 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guarnicion 1</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guarnicionV1 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guarnicion 2</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guarnicionV2 %></p>
+            <hr>
+            <h5 style="color: #686868"><b>Guarnicion 3</b></h5>
+            <p class="card-text"><b>Total:</b> <%= @guarnicionV3 %></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     </div>

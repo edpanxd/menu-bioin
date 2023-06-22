@@ -55,7 +55,26 @@
     });
   </script>
   <script>
-    $('#e1').select2({
+
+    $('#entradaL').select2({
+      placeholder: "Selecciona tu Entrada",
+      allowClear: true,
+      width: '100%',
+      dropdownParent: $('#staticBackdrop')
+    }).val(null).trigger("change");
+    $('#guisadoL').select2({
+      placeholder: "Selecciona tu Guisado",
+      allowClear: true,
+      width: '100%',
+      dropdownParent: $('#staticBackdrop')
+    }).val(null).trigger("change");
+    $('#guarnicionL').select2({
+      placeholder: "Selecciona tu Guarnicion",
+      allowClear: true,
+      width: '100%',
+      dropdownParent: $('#staticBackdrop')
+    }).val(null).trigger("change");
+    $('#nombreL').select2({
       placeholder: "Selecciona tu nombre",
       allowClear: true,
       width: '100%',
