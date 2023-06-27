@@ -57,3 +57,10 @@ body {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
 }
+.modal-po{
+ position: sticky;
+  width: 50%;
+  bottom: 10px;
+  border: 3px solid #8AC007;
+
+}

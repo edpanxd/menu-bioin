@@ -79,18 +79,31 @@
       </div>
     </a>
     <% end %>
+
+    <% @repartidores.each do |r| %>
+
     <a class="card-m" href="#">
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/839428/pexels-photo-839428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
       <div class="card-m__content">
-        <p class="card-m__category">Category</p>
-        <h3 class="card-m__heading"> </h3>
+        <p class="card-m__category"><%=I18n.l(Date.today, format: '%A, %d de %B de %Y')%></p>
+        <h3 class="card-m__heading md-5 ">Repartidores </h3>
+        <div class="d-flex justify-content-cente text-black">
+          <p class="m-5"><%= r.repartidor_1 %></p>
+
+        </div>
+        <div class="mt-5 d-flex justify-content-cente text-black">
+          <p class="m-5"><%= r.repartidor_2 %></p>
+
+        </div>
       </div>
-      </a>
+    </a>
+    <% end %>
   <div>
+
 </section>
 <!-- Modal del formulario -->
-<div class="modal fade"  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog" >
+<div class="modal fade "   id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-po" >
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Registrar Platillo</h5>
