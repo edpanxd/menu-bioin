@@ -3,13 +3,18 @@ class FormulariosController < ApplicationController
   def index
     @formulario = Formulario.new
     @empleados = Empleado.all
-    @hoy =Date.today
     @lunes = Platillo.where(fecha: Date.today.next_week(:monday))
     @martes = Platillo.where(fecha: Date.today.next_week(:tuesday))
     @miercoles = Platillo.where(fecha: Date.today.next_week(:wednesday))
     @jueves = Platillo.where(fecha: Date.today.next_week(:thursday))
     @viernes = Platillo.where(fecha: Date.today.next_week(:friday))
-    @repartidores = Platillo.where(fecha: @hoy)
+    @llunes = Formulario.where(fecha: Date.today.next_week(:monday))
+    @lmartes = Formulario.where(fecha: Date.today.next_week(:tuesday))
+    @lmiercoles = Formulario.where(fecha: Date.today.next_week(:wednesday))
+    @ljueves = Formulario.where(fecha: Date.today.next_week(:thursday))
+    @lviernes = Formulario.where(fecha: Date.today.next_week(:friday))
+    @repartidores = Platillo.where(fecha: Date.today)
+    @t = Time.now.friday?
   end
 
   def new
@@ -18,13 +23,12 @@ class FormulariosController < ApplicationController
   end
 
   def create
-      @formulario = Formulario.new(formulario_params)
-      if @formulario.save
-        redirect_to formularios_path, notice: 'new'
-      else
-        redirect_to formularios_path, alert: 'error'
+    @formulario = Formulario.new(formulario_params)
+    if @formulario.save
+      redirect_to formularios_path, notice: 'new'
+    else
+      redirect_to formularios_path, alert: 'error'
       end
-
   end
 
   def edit
@@ -130,6 +134,10 @@ class FormulariosController < ApplicationController
   end
 
   private
+
+  def lista_por_dia
+
+  end
 
   def formulario_params
     params.require(:formulario).permit(:platillo, :nombre, :fecha, :entrada, :guisado, :guarnicion)

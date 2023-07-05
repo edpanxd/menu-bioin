@@ -1,12 +1,17 @@
-
 <section class="hero-section">
   <div class="card-m-grid" >
+   <% if !@t %>
     <% @lunes.each do |menu| %>
-    <a class="card-m" href="#" id="lunes" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
+      <div class="card-m" >
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/1639556/pexels-photo-1639556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
-
       <div class="card-m__content" >
-        <p class="card-m__category"> <%= menu.fecha %></p>
+        <p class="card-m__category">
+        <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#ListaLunes" aria-controls="ListaLunes">
+          <i class="bi bi-person-lines-fill"></i>
+        </button>
+          <%= menu.fecha %>
+        </p>
+        <a href="#" id="lunes" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
         <h3 class="card-m__heading">
             Lunes
         </h3>
@@ -14,31 +19,43 @@
            <p style="font-size:15px">  <%= menu.comida %> </p>
            <p> Repartidores: <br> <%= menu.repartidor_1 %> <br> <%= menu.repartidor_2 %></p>
         </div>
-
+        </a>
       </div>
-
-    </a>
+      </div>
     <% end %>
     <% @martes.each do |menu| %>
-    <a class="card-m" href="#" id="martes" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
+      <div class="card-m">
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/604969/pexels-photo-604969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
       <div class="card-m__content">
-        <p class="card-m__category"><%= menu.fecha %></p>
+        <p class="card-m__category">
+          <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#ListaMartes" aria-controls="ListaMartes">
+          <i class="bi bi-person-lines-fill"></i>
+          </button>
+          <%= menu.fecha %>
+        </p>
+        <a href="#" id="martes" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
         <h3 class="card-m__heading">
             Martes
         </h3>
-        <div class="sub" style="white-space: pre-line; color:black;">
+          <div class="sub" style="white-space: pre-line; color:black;">
            <p style="font-size:15px">  <%= menu.comida %> </p>
            <p> Repartidores: <br> <%= menu.repartidor_1 %> <br> <%= menu.repartidor_2 %></p>
-        </div>
+          </div>
+        </a>
       </div>
-    </a>
+      </div>
     <% end %>
     <% @miercoles.each do |menu| %>
-    <a class="card-m" href="#" id="miercoles" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
+      <div class="card-m">
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/3789885/pexels-photo-3789885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
       <div class="card-m__content">
-        <p class="card-m__category"><%= menu.fecha %></p>
+        <p class="card-m__category">
+          <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#ListaMiercoles" aria-controls="ListaMiercoles">
+          <i class="bi bi-person-lines-fill"></i>
+          </button>
+          <%= menu.fecha %>
+        </p>
+        <a  href="#" id="miercoles" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
         <h3 class="card-m__heading">
             Miercoles
         </h3>
@@ -46,14 +63,21 @@
            <p style="font-size:15px">  <%= menu.comida %> </p>
            <p> Repartidores: <br> <%= menu.repartidor_1 %> <br> <%= menu.repartidor_2 %></p>
         </div>
+        </a>
       </div>
-    </a>
+      </div>
     <% end %>
     <% @jueves.each do |menu| %>
-    <a class="card-m" href="#" id="jueves" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
+      <div class="card-m">
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/1988624/pexels-photo-1988624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
       <div class="card-m__content">
-        <p class="card-m__category"><%= menu.fecha %></p>
+        <p class="card-m__category">
+          <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#ListaJueves" aria-controls="ListaJueves">
+          <i class="bi bi-person-lines-fill"></i>
+          </button>
+          <%= menu.fecha %>
+        </p>
+        <a href="#" id="jueves" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
         <h3 class="card-m__heading">
             Jueves
         </h3>
@@ -61,14 +85,21 @@
            <p style="font-size:15px">  <%= menu.comida %> </p>
            <p> Repartidores: <br> <%= menu.repartidor_1 %> <br> <%= menu.repartidor_2 %></p>
         </div>
+        </a>
       </div>
-    </a>
+      </div>
     <% end %>
     <% @viernes.each do |menu| %>
-    <a class="card-m" href="#" id="viernes" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
+      <div class="card-m">
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/3338537/pexels-photo-3338537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
       <div class="card-m__content">
-        <p class="card-m__category"><%= menu.fecha %></p>
+        <p class="card-m__category">
+          <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#ListaViernes" aria-controls="ListaViernes">
+          <i class="bi bi-person-lines-fill"></i>
+          </button>
+          <%= menu.fecha %>
+        </p>
+        <a href="#" id="viernes" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" data-fecha=<%= menu.fecha %>>
         <h3 class="card-m__heading">
           Viernes
         </h3>
@@ -76,34 +107,32 @@
            <p style="font-size:15px">  <%= menu.comida %> </p>
            <p> Repartidores: <br> <%= menu.repartidor_1 %> <br> <%= menu.repartidor_2 %></p>
         </div>
+        </a>
       </div>
-    </a>
+     </div>
     <% end %>
-
+   <% end %>
     <% @repartidores.each do |r| %>
-
-    <a class="card-m" href="#">
-      <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/839428/pexels-photo-839428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
+      <a class="card-m" href="#">
+      <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/1166869/pexels-photo-1166869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
       <div class="card-m__content">
         <p class="card-m__category"><%=I18n.l(Date.today, format: '%A, %d de %B de %Y')%></p>
         <h3 class="card-m__heading md-5 ">Repartidores </h3>
         <div class="d-flex justify-content-cente text-black">
           <p class="m-5"><%= r.repartidor_1 %></p>
-
         </div>
         <div class="mt-5 d-flex justify-content-cente text-black">
           <p class="m-5"><%= r.repartidor_2 %></p>
 
         </div>
       </div>
-    </a>
+      </a>
     <% end %>
   <div>
-
 </section>
 <!-- Modal del formulario -->
-<div class="modal fade "   id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-po" >
+  <div class="modal fade"   id="staticBackdrop"  data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" >
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Registrar Platillo</h5>
@@ -126,41 +155,114 @@
       </div>
     </div>
   </div>
-</div>
+  </div>
 <!-- Modal del formulario -->
-<% if notice == "new" %>
-  <script>
-  Swal.fire({
-  icon: 'success',
-  title: 'Pedido Realizado',
-  showConfirmButton: false,
-  timer: 1500
-  })
-  </script>
-<%end %>
 
-<% if alert == "error" %>
-  <script>
-  Swal.fire({
-  icon: 'warning',
-  title: '¡Advertencia! Verifique que su nombre se encuentre registrado en la lista',
-  text: 'En caso de que su nombre no este, vuelva a registrarse o avise a factor humano.',
+<!-- Listas-->
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="ListaLunes" aria-labelledby="ListaLunesLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="ListaLunesLabel">Lista Lunes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <input class="form-control mb-2" type="text" id="filtersearch3" value="" placeholder="Buscar Nombre"/>
+        <% @llunes.each do |l| %>
+          <p class="lista"><%= l.nombre %></p>
+        <% end %>
+      </div>
+  </div>
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="ListaMartes" aria-labelledby="ListaMartesLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="ListaMartesLabel">Lista Martes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <input class="form-control mb-2" type="text" id="filtersearch3" value="" placeholder="Buscar Nombre"/>
+        <% @lmartes.each do |l| %>
+          <p class="lista"><%= l.nombre %></p>
+        <% end %>
+      </div>
+  </div>
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="ListaMiercoles" aria-labelledby="ListaMiercolesLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="ListaMiercolesLabel">Lista Miercoles</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <input class="form-control mb-2" type="text" id="filtersearch3" value="" placeholder="Buscar Nombre"/>
+        <% @lmiercoles.each do |l| %>
+          <p class="lista"><%= l.nombre %></p>
+        <% end %>
+      </div>
+  </div>
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="ListaJueves" aria-labelledby="ListaJuevesLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="ListaJuevesLabel">Lista Jueves</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <input class="form-control mb-2" type="text" id="filtersearch3" value="" placeholder="Buscar Nombre"/>
+        <% @ljueves.each do |l| %>
+          <p class="lista"><%= l.nombre %></p>
+        <% end %>
+      </div>
+  </div>
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="ListaViernes" aria-labelledby="ListaViernesLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="ListaViernesLabel">Lista Viernes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <input class="form-control mb-2" type="text" id="filtersearch3" value="" placeholder="Buscar Nombre"/>
+        <% @lviernes.each do |l| %>
+          <p class="lista"><%= l.nombre %></p>
+        <% end %>
+      </div>
+  </div>
+<!-- Listas-->
 
-  timer: 6200,
-  confirmButtonText:
-    ' <button class="btn m-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Lista</button>',
-  confirmButtonAriaLabel:'Lista'
-  })
-  </script>
-<%end %>
-
-<% if alert == "time" %>
+<!-- Draggable-->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script>
-  Swal.fire({
-  icon: 'error',
-  title: 'El tiempo de solicitud de comida a terminado',
-  showConfirmButton: false,
-  timer: 1500
-  })
+    $("#staticBackdrop").draggable({
+     handle: ".modal-header"
+    });
   </script>
-<%end %>
+<!-- Draggable-->
+
+<!-- Alertas-->
+  <% if notice == "new" %>
+    <script>
+    Swal.fire({
+    icon: 'success',
+    title: 'Pedido Realizado',
+    showConfirmButton: false,
+    timer: 1500
+    })
+    </script>
+  <%end %>
+
+  <% if alert == "error" %>
+    <script>
+    Swal.fire({
+    icon: 'warning',
+    title: '¡Advertencia! Verifique que su nombre se encuentre registrado en la lista',
+    text: 'En caso de que su nombre no este, vuelva a registrarse o avise a factor humano.',
+
+    timer: 6200
+
+    })
+    </script>
+  <%end %>
+
+  <% if alert == "time" %>
+    <script>
+    Swal.fire({
+    icon: 'error',
+    title: 'El tiempo de solicitud de comida a terminado',
+    showConfirmButton: false,
+    timer: 1500
+    })
+    </script>
+  <%end %>
+<!-- Alertas-->
