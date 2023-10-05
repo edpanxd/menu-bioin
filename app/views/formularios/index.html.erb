@@ -118,13 +118,14 @@
       <div class="card-m__content">
         <p class="card-m__category"><%=I18n.l(Date.today, format: '%A, %d de %B de %Y')%></p>
         <h3 class="card-m__heading md-5 ">Repartidores </h3>
-        <div class="d-flex justify-content-cente text-black">
-          <p class="m-5"><%= r.repartidor_1 %></p>
-        </div>
-        <div class="mt-5 d-flex justify-content-cente text-black">
-          <p class="m-5"><%= r.repartidor_2 %></p>
-        </div>
+
+
+
         <div class="mt-5 d-flex justify-content-cente text-black" style="white-space: pre-line; color:black;">
+           <p class="m-5"><%= r.repartidor_1 %></p>
+
+
+          <p class="m-5"><%= r.repartidor_2 %></p>
           <p class="m-5"><%= r.comida %></p>
 
         </div>
