@@ -1,6 +1,6 @@
 <section class="hero-section">
   <div class="card-m-grid" >
-   <%#if !@t %>
+   <%if !@t %>
     <% @lunes.each do |menu| %>
       <div class="card-m" >
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/1639556/pexels-photo-1639556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
@@ -111,24 +111,17 @@
       </div>
      </div>
     <% end %>
-   <%# end %>
+   <% end %>
     <% @repartidores.each do |r| %>
       <a class="card-m" href="#">
       <div class="card-m__background" style="background-image: url(https://images.pexels.com/photos/1166869/pexels-photo-1166869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
       <div class="card-m__content">
         <p class="card-m__category"><%=I18n.l(Date.today, format: '%A, %d de %B de %Y')%></p>
         <h3 class="card-m__heading md-5 ">Repartidores </h3>
-
-
-
         <div class="mt-5 d-flex justify-content-cente text-black" style="white-space: pre-line; color:black;">
-
           <p class="m-5"><%= r.comida %></p>
-
         </div>
         <p class="m-5"><%= r.repartidor_1 %></p>
-
-
           <p class="m-5"><%= r.repartidor_2 %></p>
       </div>
       </a>
