@@ -59,7 +59,7 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 # gem 'data_tables', '~> 0.1.26'
 gem 'will_paginate'
-#gem 'mysql2'
+gem 'mysql2'
 ## Export excel
 gem 'caxlsx'
 gem 'caxlsx_rails'
