@@ -8,7 +8,7 @@ gem "rails", "~> 7.0.0"
 # Use postgresql as the database for Active Record
 
 gem "tiny_tds"
-gem 'activerecord-sqlserver-adapter'
+
 
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
