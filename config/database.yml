@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SQL Server (2012 or higher required)
 #
 # Install the adapters and driver
@@ -22,9 +23,22 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+=======
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: bioindev
+  password: BioinDev123asd
+  database: menubioin
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+
+>>>>>>> b5f4d23d4c05b8bc041cee242496a5bb20836283
 test:
   <<: *default
-  database: menu_bioin_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -48,6 +62,9 @@ test:
 #
 production:
   <<: *default
+<<<<<<< HEAD
   database: menu_bioin_production
   username: bioin.dev
   password: bioindev23*
+=======
+>>>>>>> b5f4d23d4c05b8bc041cee242496a5bb20836283
