@@ -60,11 +60,6 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 # gem 'data_tables', '~> 0.1.26'
 gem 'will_paginate'
-<<<<<<< HEAD
-
-=======
-
->>>>>>> b5f4d23d4c05b8bc041cee242496a5bb20836283
 ## Export excel
 gem 'caxlsx'
 gem 'caxlsx_rails'
