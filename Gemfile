@@ -63,3 +63,4 @@ gem 'will_paginate'
 gem 'caxlsx'
 gem 'caxlsx_rails'
 gem 'net-http', '0.3.2'
+gem "sprockets-rails"
