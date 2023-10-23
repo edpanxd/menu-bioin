@@ -4,9 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.5'
+gem "rails", "~> 7.0.0"
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
+gem 'activerecord-sqlserver-adapter'
+gem "tiny_tds"
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -59,7 +60,9 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 # gem 'data_tables', '~> 0.1.26'
 gem 'will_paginate'
-#gem 'mysql2'
+#gem 'activerecord-sqlserver-adapter'
 ## Export excel
 gem 'caxlsx'
 gem 'caxlsx_rails'
+gem 'net-http', '0.3.2'
+gem "sprockets-rails"

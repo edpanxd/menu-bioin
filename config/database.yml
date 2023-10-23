@@ -1,40 +1,53 @@
-
+# SQL Server (2012 or higher required)
+#
+# Install the adapters and driver
+#   gem install tiny_tds
+#   gem install activerecord-sqlserver-adapter
+#
+# Ensure the activerecord adapter and db driver gems are defined in your Gemfile
+#   gem 'tiny_tds'
+#   gem 'activerecord-sqlserver-adapter'
+#
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: sqlserver
+  encoding: utf8
+  username: bioin.dev
+  password: bioindev23*
+  host: 192.168.1.20
 
 development:
   <<: *default
   database: menu_bioin_development
 
-
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
 test:
   <<: *default
   database: menu_bioin_test
 
+# As with config/credentials.yml, you never want to store sensitive information,
+# like your database password, in your source code. If your source code is
+# ever seen by anyone, they now have access to your database.
+#
+# Instead, provide the password or a full connection URL as an environment
+# variable when you boot the app. For example:
+#
+#   DATABASE_URL="sqlserver://myuser:mypass@localhost/somedatabase"
+#
+# If the connection URL is provided in the special DATABASE_URL environment
+# variable, Rails will automatically merge its configuration values on top of
+# the values provided in this file. Alternatively, you can specify a connection
+# URL environment variable explicitly:
+#
+#   production:
+#     url: <%= ENV['MY_APP_DATABASE_URL'] %>
+#
+# Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
+# for a full overview on how database connection configuration can be specified.
+#
 production:
   <<: *default
   database: menu_bioin_production
-  username: menu_bioin
-  password: <%= ENV['MENU_BIOIN_DATABASE_PASSWORD'] %>
-
-
-
- #default: &default
-  #adapter: mysql2
-  #encoding: utf8mb4
-  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  #username: bioindev
-  #password: BioinDev123asd
-  #database: menubioin
-  #socket: /var/run/mysqld/mysqld.sock
-
-#development:
-  #<<: *default
-
-#test:
-  #<<: *default
-
-#production:
-  #<<: *default
+  username: bioin.dev
+  password: bioindev23*
