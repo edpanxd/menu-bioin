@@ -4,7 +4,8 @@ test:
 
 local:
   service: Disk
-  root: <%= Rails.root.join("storage") %>
+  root: <%= Rails.root.join("/run/user/1000/gvfs/smb-share:server=192.168.1.250,share=it/Planos Bioin/Prueba de escritura") %>
+  #root: <%= Rails.root.join("storage") %>
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
