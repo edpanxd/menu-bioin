@@ -13,10 +13,6 @@
 
 <%=form.label  :comida, class: "form-label text-light" %>
 <%=form.text_area :comida, class: "form-control", :rows => 18 %>
-<%=form.label :repartidor_1, class: "form-label text-light" %>
-<%= form.select :repartidor_1, options_for_select(@empleados.collect{ |u| [u.nombre , u.nombre]  } ), {}, {class: "form-control", id:"e2"} %>
-<%=form.label :repartidor_2, class: "form-label text-light" %>
-<%= form.select :repartidor_2, options_for_select(@empleados.collect{ |u| [u.nombre , u.nombre]  }), {}, {class: "form-control", id:"e6"} %>
 <%=form.label :fecha, class: "form-label text-light" %>
 <%=form.date_field  :fecha, class: "form-control "%>
 <!--
