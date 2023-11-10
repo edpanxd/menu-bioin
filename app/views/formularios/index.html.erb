@@ -1,7 +1,7 @@
 <section class="hero-section">
   <div class="card-m-grid" >
 
-   <%if  Time.now.strftime("%H:%M") < "19:00" || !@t %>
+   <%if  @thursday && Time.now.strftime("%H:%M") < "19:00" || @friday && Time.now.strftime("%H:%M") < "19:00"  %>
 
       <% @lunes.each do |menu| %>
         <div class="card-m" >

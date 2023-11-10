@@ -14,8 +14,8 @@ class FormulariosController < ApplicationController
     @ljueves = Formulario.where(fecha: Date.today.next_week(:thursday))
     @lviernes = Formulario.where(fecha: Date.today.next_week(:friday))
     @repartidores = Platillo.where(fecha: Date.today)
-    @t = Time.now.friday?
-
+    @friday = Time.now.friday?
+    @thursday = Time.now.thursday?
   end
 
   def new
