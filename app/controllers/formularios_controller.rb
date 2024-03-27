@@ -16,6 +16,7 @@ class FormulariosController < ApplicationController
     @repartidores = Platillo.where(fecha: Date.today)
     @friday = Time.now.friday?
     @thursday = Time.now.thursday?
+    @wednesday = Time.now.wednesday?
   end
 
   def new
