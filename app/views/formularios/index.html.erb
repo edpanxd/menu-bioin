@@ -123,6 +123,22 @@
       </div>
       </a>
     <% end %>
+
+
+      <div class="card">
+        <h5 class="card-header">Encuesta</h5>
+        <div class="card-body">
+
+          <p class="card-text">Apoyanos a contestar esta encuesta de manera urgente!!</p>
+          <a href="#" id class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#Encuesta" data-fecha=>
+          Constestar
+          </a>
+        </div>
+      </div>
+
+
+
+
   <div>
 </section>
 <!-- Modal del formulario -->
@@ -142,9 +158,32 @@
         <%=form.label  :guarnicion, class: "form-label" %>
         <%= form.select :guarnicion, [['Guarnición 1', 'Guarnición 1'], ['Guarnición 2', 'Guarnición 2'],['Guarnición 3', 'Guarnición 3']], {}, {class: "form-select", id:"guarnicionL"} %>
         <%=form.label :nombre, class: "form-label" %>
-        <%= form.select :nombre, options_for_select(@empleados.collect{ |u| [u.nombre, u.nombre] }), {}, {class: "form-control", id:"nombreL"} %>
+        <%= form.select :nombre, options_for_select(@empleados.collect{ |u| [u.nombre, u.nombre] }), {}, {class: "form-control"} %>
         <%=form.label :fecha, class: "form-label" %>
         <%=form.date_field  :fecha, class: "form-control ", :readonly => true,  id: "platillo" %>
+        <%= form.submit :"Registrar", class: "btn btn-success mt-4" %>
+        <%end%>
+      </div>
+    </div>
+  </div>
+  </div>
+<!-- Modal del formulario -->
+<!-- Modal del formulario -->
+  <div class="modal fade"   id="Encuesta"  data-bs-keyboard="false"  aria-labelledby="EncuestaLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EncuestaLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body " >
+        <%= form_with model: @encuesta do |form|%>
+        <%=form.label  :pregunta_uno,"¿Cómo te gustaría se te otorgue la comida?", class: "form-label" %>
+        <%= form.select :pregunta_uno, [['1.	En especie (menú)', '1.	En especie (menú)'], ['2.	En efectivo (Pago en viernes)', '2.	En efectivo (Pago en viernes)']], {include_blank: true}, {class: "form-select ", id: "pregunta"} %>
+        <%=form.label :nombre, class: "form-label" %>
+        <%= form.select :nombre, options_for_select(@empleados.collect{ |u| [u.nombre, u.nombre] }), {}, {class: "form-control", id:"nombreL"} %>
+        <%=form.label :fecha, class: "form-label" %>
+        <%=form.date_field  :fecha, class: "form-control ", :readonly => true, value: DateTime.current.to_date %>
         <%= form.submit :"Registrar", class: "btn btn-success mt-4" %>
         <%end%>
       </div>

@@ -2,6 +2,7 @@ class FormulariosController < ApplicationController
 
   def index
     @formulario = Formulario.new
+    @encuesta = Encuestum.new
     @empleados = Empleado.all
     @lunes = Platillo.where(fecha: Date.today.next_week(:monday))
     @martes = Platillo.where(fecha: Date.today.next_week(:tuesday))
@@ -25,12 +26,22 @@ class FormulariosController < ApplicationController
   end
 
   def create
-    @formulario = Formulario.new(formulario_params)
-    if @formulario.save
-      redirect_to formularios_path, notice: 'new'
+    if @formulario == true
+      @formulario = Formulario.new(formulario_params)
+        if @formulario.save
+          redirect_to formularios_path, notice: 'new'
+        else
+          redirect_to formularios_path, alert: 'error'
+        end
     else
-      redirect_to formularios_path, alert: 'error'
-      end
+      @encueta = Encuestum.new(encuesta_params)
+        if @encueta.save
+          redirect_to formularios_path, notice: 'new'
+        else
+          redirect_to formularios_path, alert: 'error'
+        end
+    end
+
   end
 
   def edit
@@ -143,5 +154,8 @@ class FormulariosController < ApplicationController
 
   def formulario_params
     params.require(:formulario).permit(:platillo, :nombre, :fecha, :entrada, :guisado, :guarnicion)
+  end
+  def encuesta_params
+    params.require(:encuestum).permit(:pregunta_uno, :pregunta_dos, :pregunta_tres, :pregunta_cuatro, :nombre, :fecha)
   end
 end

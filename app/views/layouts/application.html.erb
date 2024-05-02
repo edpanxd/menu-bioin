@@ -76,7 +76,13 @@
       placeholder: "Selecciona tu nombre",
       allowClear: true,
       width: '100%',
-      dropdownParent: $('#staticBackdrop')
+      dropdownParent: $('#Encuesta')
+    }).val(null).trigger("change");
+     $('#pregunta').select2({
+      placeholder: "Selecciona tu nombre",
+      allowClear: true,
+      width: '100%',
+      dropdownParent: $('#Encuesta')
     }).val(null).trigger("change");
     $('#e2').select2({
       placeholder: "Selecciona tu nombre",
@@ -109,6 +115,12 @@
 
     })
     $('#e6').select2({
+      placeholder: "Selecciona tu nombre",
+
+      width: '100%',
+
+    })
+    $('#e7').select2({
       placeholder: "Selecciona tu nombre",
 
       width: '100%',

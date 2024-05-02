@@ -1,0 +1,2 @@
+class Encuestum < ApplicationRecord
+end
